@@ -24,7 +24,7 @@ namespace MySolution
         enum EnMode { AddNew = 0 , Update = 1 };
         enum EnGender { Male = 0, Female = 1 };
 
-        string _ImageSource;
+        string _ImageSource = "";
         EnMode _Mode;
 
         clsPerson _Person;
@@ -153,22 +153,34 @@ namespace MySolution
 
         private bool _HandlePersonImage()
         {
-            if(string.IsNullOrEmpty(pbImage.ImageLocation))
+
+            if(pbImage.ImageLocation == _Person.ImagePath)
             {
                 return true;
             }
 
-            if(pbImage.ImageLocation == _ImageSource)
+            if(_Person.ImagePath != "")
             {
-                return true;
+                try
+                {
+                    File.Delete(_Person.ImagePath);
+                }
+                catch
+                {
+                    return false;
+                }
+                
             }
 
-            if(clsUtil.CopyImageToProjectFolder(ref _ImageSource))
+            _ImageSource = pbImage.ImageLocation;
+
+            if (clsUtil.CopyImageToProjectFolder(ref _ImageSource))
             {
                 _Person.ImagePath = _ImageSource;
                 return true;
             }
 
+            MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
 
