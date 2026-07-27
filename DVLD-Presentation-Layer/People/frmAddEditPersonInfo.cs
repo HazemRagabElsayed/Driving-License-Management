@@ -130,7 +130,7 @@ namespace MySolution
 
             //cbCountry.Text = "Jordan";
         }
-        private bool _AssureFinalChanges()
+        private void _AssureFinalChanges()
         {
             _Person.FirstName = txtFirstName.Text;
             _Person.SecondName = txtSecondName.Text;
@@ -246,11 +246,7 @@ namespace MySolution
                 return;
             }
 
-            if (!_AssureFinalChanges())
-            {
-                return;
-            }
-
+            _AssureFinalChanges();
 
             if (_Person.Save())
             {
