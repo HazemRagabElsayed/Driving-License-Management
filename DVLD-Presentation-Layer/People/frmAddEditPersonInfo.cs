@@ -148,6 +148,7 @@ namespace MySolution
             _Person.NationalityCountryID = clsCountry.Find(cbCountry.Text).CountryID;
             
             _Person.Address = txtAddress.Text;
+            _Person.ImagePath = pbImage.ImageLocation;
 
         }
 
@@ -171,6 +172,9 @@ namespace MySolution
                 }
                 
             }
+
+            if (string.IsNullOrEmpty(pbImage.ImageLocation))
+                return true;
 
             _ImageSource = pbImage.ImageLocation;
 
