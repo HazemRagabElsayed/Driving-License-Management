@@ -12,8 +12,6 @@ using System.Threading.Tasks;
 using System.Web.UI;
 using System.Windows.Forms;
 using System.Xml.Linq;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using System.IO;
 using MySolution.Global_Classes;
 
@@ -190,23 +188,27 @@ namespace MySolution
 
         private void _ValidateNationalNo()
         {
-            epValidation.Clear();
+            if(txtNationalNo.Text.Trim() == "")
+            {
+                epValidation.SetError(txtNationalNo, "This field is required!");
+
+                return;
+            }
             if (clsPerson.IsExist(txtNationalNo.Text))
             {
                 epValidation.SetError(txtNationalNo, "National Number is used by another person!");
+                return;
             }
-            else
-            {
-                epValidation.Clear();
-            }
+            
+                epValidation.SetError(txtNationalNo, null);
+            
         }
         private void _ValidateEmail()
         {
-            epValidation.Clear();
 
             if (txtEmail.Text.EndsWith("@gmail.com"))
             {
-                epValidation.Clear();
+                epValidation.SetError(txtEmail,null);
             }
             else
             {
@@ -331,5 +333,16 @@ namespace MySolution
             }
         }
 
+        private void txtEmpty_Validating(object sender, CancelEventArgs e)
+        {
+            if(((TextBox)sender).Text.Trim() == "")
+            {
+                epValidation.SetError((TextBox)sender, "This field is required!");
+            }
+            else
+            {
+                epValidation.SetError((TextBox)sender, null);
+            }
+        }
     }
 }

@@ -245,6 +245,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(448, 85);
             this.txtAddress.TabIndex = 49;
+            this.txtAddress.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmpty_Validating);
             // 
             // llRemoveImage
             // 
@@ -328,6 +329,7 @@
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(143, 20);
             this.txtPhone.TabIndex = 7;
+            this.txtPhone.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmpty_Validating);
             // 
             // dtpDateOfBirth
             // 
@@ -485,6 +487,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(128, 20);
             this.txtLastName.TabIndex = 4;
+            this.txtLastName.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmpty_Validating);
             // 
             // txtThirdName
             // 
@@ -501,6 +504,7 @@
             this.txtSecondName.Name = "txtSecondName";
             this.txtSecondName.Size = new System.Drawing.Size(128, 20);
             this.txtSecondName.TabIndex = 2;
+            this.txtSecondName.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmpty_Validating);
             // 
             // txtFirstName
             // 
@@ -509,6 +513,7 @@
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(128, 20);
             this.txtFirstName.TabIndex = 1;
+            this.txtFirstName.Validating += new System.ComponentModel.CancelEventHandler(this.txtEmpty_Validating);
             // 
             // label14
             // 
