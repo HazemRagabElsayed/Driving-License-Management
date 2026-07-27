@@ -57,7 +57,7 @@ namespace MySolution
             _SetAllowedMaxAge(100);
             _LoadCountryData();
 
-            _ImageSource = _Person.ImagePath;
+           
 
             llRemoveImage.Visible = (!string.IsNullOrEmpty(pbImage.ImageLocation));
         }
@@ -221,6 +221,7 @@ namespace MySolution
             {
                 _LoadPersonInfo();
                 lblTitle.Text = "Update Person";
+                _ImageSource = _Person.ImagePath;
             }
             else
             {
