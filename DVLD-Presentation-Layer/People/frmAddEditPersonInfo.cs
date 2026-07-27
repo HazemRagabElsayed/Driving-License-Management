@@ -14,6 +14,8 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using System.IO;
+using MySolution.Global_Classes;
 
 namespace MySolution
 {
@@ -22,7 +24,7 @@ namespace MySolution
         enum EnMode { AddNew = 0 , Update = 1 };
         enum EnGender { Male = 0, Female = 1 };
 
-        string _ImageExtension = "";
+        string _ImageSource;
         EnMode _Mode;
 
         clsPerson _Person;
@@ -54,6 +56,8 @@ namespace MySolution
             _SetAllowedMinAge(18);
             _SetAllowedMaxAge(100);
             _LoadCountryData();
+
+            _ImageSource = _Person.ImagePath;
 
             llRemoveImage.Visible = (!string.IsNullOrEmpty(pbImage.ImageLocation));
         }
@@ -128,29 +132,47 @@ namespace MySolution
         }
         private bool _AssureFinalChanges()
         {
-                _Person.FirstName = txtFirstName.Text;
-                _Person.SecondName = txtSecondName.Text;
-                _Person.ThirdName = txtThirdName.Text;
-                _Person.LastName = txtLastName.Text;
-
-                _Person.NationalNo = txtNationalNo.Text ;
-                _Person.DateOfBirth = dtpDateOfBirth.Value;
-
-                _Person.Gender = Convert.ToInt16(rbFemale.Checked);
-
-                _Person.Phone = txtPhone.Text;
-                _Person.Email = txtEmail.Text;
-
-                _Person.NationalityCountryID = clsCountry.Find(cbCountry.Text).CountryID;
-
-                _Person.Address = txtAddress.Text;
-
-                return _SaveImageToPeopleFolder(_Person.ImagePath);
-
+            _Person.FirstName = txtFirstName.Text;
+            _Person.SecondName = txtSecondName.Text;
+            _Person.ThirdName = txtThirdName.Text;
+            _Person.LastName = txtLastName.Text;
+            
+            _Person.NationalNo = txtNationalNo.Text ;
+            _Person.DateOfBirth = dtpDateOfBirth.Value;
+            
+            _Person.Gender = Convert.ToInt16(rbFemale.Checked);
+            
+            _Person.Phone = txtPhone.Text;
+            _Person.Email = txtEmail.Text;
+            
+            _Person.NationalityCountryID = clsCountry.Find(cbCountry.Text).CountryID;
+            
+            _Person.Address = txtAddress.Text;
 
         }
 
-       private void _ValidateNationalNo()
+        private bool _HandlePersonImage()
+        {
+            if(string.IsNullOrEmpty(pbImage.ImageLocation))
+            {
+                return true;
+            }
+
+            if(pbImage.ImageLocation == _ImageSource)
+            {
+                return true;
+            }
+
+            if(clsUtil.CopyImageToProjectFolder(ref _ImageSource))
+            {
+                _Person.ImagePath = _ImageSource;
+                return true;
+            }
+
+            return false;
+        }
+
+        private void _ValidateNationalNo()
         {
             epValidation.Clear();
             if (clsPerson.IsExist(txtNationalNo.Text))
@@ -162,7 +184,7 @@ namespace MySolution
                 epValidation.Clear();
             }
         }
-       private void _ValidateEmail()
+        private void _ValidateEmail()
         {
             epValidation.Clear();
 
@@ -190,99 +212,6 @@ namespace MySolution
                 }
             }
         }
-       private bool _DeleteImage(string Image)
-        {
-            if (!string.IsNullOrEmpty(Image))
-            {
-                try
-                {
-                    File.Delete(Image);
-                    return true;
-                }
-                catch (IOException)
-                {
-                    return false;
-                }
-                
-            }
-            else
-            {
-                return true;
-            }
-               
-        }
-       private bool _CopyImage(string Image)
-        {
-            if (!Directory.Exists("D:\\Repos\\Driving-License-Management\\DVLD-People-Images"))
-            {
-                Directory.CreateDirectory(_Person.ImagePath);
-            }
-            if (!string.IsNullOrEmpty(Image))
-            {
-                try
-                {
-                    File.Copy(Image, _Person.ImagePath);
-
-                    return true;
-                }
-                catch (IOException)
-                {
-                    return false;
-                }
-                
-
-            }
-            else
-            {
-                return true;
-            }
-        }
-
-        bool _SaveImageToPeopleFolder(string SourceImage)
-        {
-
-            bool NoError = true;
-
-            if (pbImage.ImageLocation == null && SourceImage == "")
-            {
-                return NoError;
-            }
-
-            
-
-            if (!string.IsNullOrEmpty(SourceImage))
-            {
-                if (!_DeleteImage(SourceImage))
-                {
-
-                    MessageBox.Show("Error : Old image is not deleted");
-                    NoError = false;
-                }
-   
-            }
-
-            if (pbImage.ImageLocation == null)
-            {
-                _Person.ImagePath = "";
-            }
-            else
-            {
-                _ImageExtension = Path.GetExtension(pbImage.ImageLocation);
-                _Person.ImagePath = "D:\\Repos\\Driving-License-Management\\DVLD-People-Images\\" + Guid.NewGuid() + _ImageExtension;
-
-                if (!_CopyImage(pbImage.ImageLocation))
-                {
-
-                    MessageBox.Show("Error : New image is not copied");
-                    NoError = false;
-                }
-            }
-
-            return NoError;
-            
-
-        }
-
         private void frmAddEditPersonInfo_Load(object sender, EventArgs e)
         {
 
@@ -299,7 +228,6 @@ namespace MySolution
                 _Person = new clsPerson();
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
 
@@ -311,6 +239,12 @@ namespace MySolution
                 return;
             }
 
+            if (!_HandlePersonImage())
+            {
+                MessageBox.Show("Erorr : Handling person image!", "Error"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
             if (!_AssureFinalChanges())
             {
@@ -353,7 +287,7 @@ namespace MySolution
             if (ofdSetImage.ShowDialog() == DialogResult.OK)
             {
                 pbImage.ImageLocation = ofdSetImage.FileName;
-
+               
                 llRemoveImage.Visible = true;
             }
 
