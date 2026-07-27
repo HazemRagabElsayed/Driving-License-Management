@@ -238,7 +238,7 @@ namespace MySolution
         }
        private bool CopyImage(string Image)
         {
-            if (!Directory.Exists("D:\\All_Courses\\Abu-Hadhoud\\Course19\\DVLD-People-Images"))
+            if (!Directory.Exists("D:\\Repos\\Driving-License-Management\\DVLD-People-Images"))
             {
                 Directory.CreateDirectory(_Person.ImagePath);
             }
@@ -293,7 +293,7 @@ namespace MySolution
             else
             {
                 _ImageExtension = Path.GetExtension(pbImage.ImageLocation);
-                _Person.ImagePath = "D:\\All_Courses\\Abu-Hadhoud\\Course19\\DVLD-People-Images\\" + Guid.NewGuid() + _ImageExtension;
+                _Person.ImagePath = "D:\\Repos\\Driving-License-Management\\DVLD-People-Images\\" + Guid.NewGuid() + _ImageExtension;
 
                 if (!CopyImage(pbImage.ImageLocation))
                 {
