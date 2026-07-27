@@ -19,7 +19,7 @@ namespace MySolution
     public partial class frmAddEditPersonInfo : Form
     {
         enum EnMode { AddNew = 0 , Update = 1 };
-        enum EnGender { Male = 0, Female1 };
+        enum EnGender { Male = 0, Female = 1 };
 
         string _ImageExtension = "";
         EnMode _Mode;
