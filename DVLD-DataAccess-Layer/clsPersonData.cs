@@ -364,7 +364,7 @@ namespace DVLDDataAccessLayer
             command.Parameters.AddWithValue("@Email", Email);
             command.Parameters.AddWithValue("@NationalityCountryID", NationalityCountryID);
 
-            if(ImagePath == "")
+            if(string.IsNullOrEmpty(ImagePath))
             {
                 command.Parameters.AddWithValue("@ImagePath", DBNull.Value);
 
