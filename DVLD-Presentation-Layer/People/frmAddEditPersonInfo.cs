@@ -50,22 +50,22 @@ namespace MySolution
         private void _ResetDefaultValues()
         {
 
-            SetAllowedMinAge(18);
-            SetAllowedMaxAge(100);
-            LoadCountryData();
+            _SetAllowedMinAge(18);
+            _SetAllowedMaxAge(100);
+            _LoadCountryData();
 
             llRemoveImage.Visible = (!string.IsNullOrEmpty(pbImage.ImageLocation));
         }
 
-        private void SetAllowedMinAge(int Age)
+        private void _SetAllowedMinAge(int Age)
         {
             dtpDateOfBirth.MaxDate = DateTime.Now.AddYears(-Age);
         }
-        private void SetAllowedMaxAge(int Age)
+        private void _SetAllowedMaxAge(int Age)
         {
             dtpDateOfBirth.MinDate = DateTime.Now.AddYears(-Age);
         }
-        private void LoadPersonInfo()
+        private void _LoadPersonInfo()
         {
 
             if ((_Person = clsPerson.Find(_PersonID)) != null)
@@ -109,7 +109,7 @@ namespace MySolution
                 MessageBox.Show($"Person with ID {_Person.PersonID} doesn't exist");
             }
         }
-        private void LoadCountryData()
+        private void _LoadCountryData()
         {
             foreach (DataRow Row in clsCountry.GetAll().Rows)
             {
@@ -125,7 +125,7 @@ namespace MySolution
 
             //cbCountry.Text = "Jordan";
         }
-        private bool AssureFinalChanges()
+        private bool _AssureFinalChanges()
         {
                 _Person.FirstName = txtFirstName.Text;
                 _Person.SecondName = txtSecondName.Text;
@@ -144,12 +144,12 @@ namespace MySolution
 
                 _Person.Address = txtAddress.Text;
 
-                return SaveImageToPeopleFolder(_Person.ImagePath);
+                return _SaveImageToPeopleFolder(_Person.ImagePath);
 
 
         }
 
-       private void ValidateNationalNo()
+       private void _ValidateNationalNo()
         {
             epValidation.Clear();
             if (clsPerson.IsExist(txtNationalNo.Text))
@@ -161,7 +161,7 @@ namespace MySolution
                 epValidation.Clear();
             }
         }
-       private void ValidateEmail()
+       private void _ValidateEmail()
         {
             epValidation.Clear();
 
@@ -174,7 +174,7 @@ namespace MySolution
                 epValidation.SetError(txtEmail, "Invalid Email Address Foramt");          
             }
         }
-       private bool IsThereInValidFields()
+       private bool _IsThereInValidFields()
         {
 
             bool InValid = false;
@@ -201,7 +201,7 @@ namespace MySolution
             }
             return InValid;
         }
-       private void ChangeImageBasedOnGenderSelection()
+       private void _ChangeImageBasedOnGenderSelection()
         {
             if (string.IsNullOrEmpty(pbImage.ImageLocation))
             {
@@ -215,7 +215,7 @@ namespace MySolution
                 }
             }
         }
-       private bool DeleteImage(string Image)
+       private bool _DeleteImage(string Image)
         {
             if (!string.IsNullOrEmpty(Image))
             {
@@ -236,7 +236,7 @@ namespace MySolution
             }
                
         }
-       private bool CopyImage(string Image)
+       private bool _CopyImage(string Image)
         {
             if (!Directory.Exists("D:\\Repos\\Driving-License-Management\\DVLD-People-Images"))
             {
@@ -263,7 +263,7 @@ namespace MySolution
             }
         }
 
-        bool SaveImageToPeopleFolder(string SourceImage)
+        bool _SaveImageToPeopleFolder(string SourceImage)
         {
 
             bool NoError = true;
@@ -277,7 +277,7 @@ namespace MySolution
 
             if (!string.IsNullOrEmpty(SourceImage))
             {
-                if (!DeleteImage(SourceImage))
+                if (!_DeleteImage(SourceImage))
                 {
 
                     MessageBox.Show("Error : Old image is not deleted");
@@ -295,7 +295,7 @@ namespace MySolution
                 _ImageExtension = Path.GetExtension(pbImage.ImageLocation);
                 _Person.ImagePath = "D:\\Repos\\Driving-License-Management\\DVLD-People-Images\\" + Guid.NewGuid() + _ImageExtension;
 
-                if (!CopyImage(pbImage.ImageLocation))
+                if (!_CopyImage(pbImage.ImageLocation))
                 {
 
                     MessageBox.Show("Error : New image is not copied");
@@ -315,7 +315,7 @@ namespace MySolution
 
             if (_Mode == EnMode.Update)
             {
-                LoadPersonInfo();
+                _LoadPersonInfo();
                 lblTitle.Text = "Update Person";
             }
             else
@@ -328,7 +328,7 @@ namespace MySolution
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (IsThereInValidFields())
+            if (_IsThereInValidFields())
             {
                 MessageBox.Show("Some fields are not valid!" +
                     ", put the mouse over the red icon(s) to see the error", "Validation Error"
@@ -337,7 +337,7 @@ namespace MySolution
             }
 
 
-            if (!AssureFinalChanges())
+            if (!_AssureFinalChanges())
             {
                 return;
             }
@@ -370,7 +370,7 @@ namespace MySolution
 
         private void rbGender_Checked_Changed(object sender, EventArgs e)
         {
-            ChangeImageBasedOnGenderSelection();
+            _ChangeImageBasedOnGenderSelection();
         }
 
         private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -387,7 +387,7 @@ namespace MySolution
         private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             pbImage.ImageLocation = null;
-            ChangeImageBasedOnGenderSelection();
+            _ChangeImageBasedOnGenderSelection();
             llRemoveImage.Visible = false;
 
         }
@@ -397,7 +397,7 @@ namespace MySolution
         {
             if (_Mode == EnMode.AddNew)
             {
-                ValidateNationalNo();
+                _ValidateNationalNo();
             }
         }
 
@@ -405,7 +405,7 @@ namespace MySolution
         {
             if(txtEmail.Text != "")
             {
-                ValidateEmail();
+                _ValidateEmail();
             }
         }
 
