@@ -5,9 +5,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -195,34 +197,8 @@ namespace MySolution
                 epValidation.SetError(txtEmail, "Invalid Email Address Foramt");          
             }
         }
-        private bool _IsThereInValidFields()
-        {
 
-            bool InValid = false;
-
-            foreach (Control control in pInputtedData.Controls)
-            {
-               
-           
-            // If the control is a TextBox, collect it
-            if ((control is System.Windows.Forms.TextBox textBox ||
-                    control is System.Windows.Forms.RichTextBox richtextbox)
-                    &&
-                    control.Name != "txtThirdName"
-                    && control.Name != "txtThirdName"
-                    && control.Name != "txtEmail")
-                {
-                    if(control.Text == "")
-                    {
-                        epValidation.SetError(control, "This field is required!");
-                        InValid = true;
-                    }
-                   
-                }
-            }
-            return InValid;
-        }
-        private void _ChangeImageBasedOnGenderSelection()
+       private void _ChangeImageBasedOnGenderSelection()
         {
             if (string.IsNullOrEmpty(pbImage.ImageLocation))
             {
@@ -255,7 +231,7 @@ namespace MySolution
         private void btnSave_Click(object sender, EventArgs e)
         {
 
-            if (_IsThereInValidFields())
+            if (!ValidateChildren())
             {
                 MessageBox.Show("Some fields are not valid!" +
                     ", put the mouse over the red icon(s) to see the error", "Validation Error"
