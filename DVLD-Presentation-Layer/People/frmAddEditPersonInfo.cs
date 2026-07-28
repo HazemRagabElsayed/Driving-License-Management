@@ -113,8 +113,12 @@ namespace MySolution
         private void _LoadPersonInfo()
         {
 
-            if ((_Person = clsPerson.Find(_PersonID)) != null)
+            if ((_Person = clsPerson.Find(_PersonID)) == null)
             {
+                MessageBox.Show($"Person with ID {_Person.PersonID} doesn't exist");
+                this.Close();
+                return;
+            }
 
                 lblPersonID.Text = _Person.PersonID.ToString();
                 
@@ -122,7 +126,6 @@ namespace MySolution
                 txtSecondName.Text = _Person.SecondName;
                 txtThirdName.Text = _Person.ThirdName;
                 txtLastName.Text = _Person.LastName;
-
                 txtNationalNo.Text = _Person.NationalNo;
                 dtpDateOfBirth.Text = _Person.DateOfBirth.ToString();
 
@@ -134,26 +137,20 @@ namespace MySolution
                 {
                     rbFemale.Checked = true;
                 }
+
                 txtPhone.Text = _Person.Phone;
                 txtEmail.Text = _Person.Email;
-
                 cbCountry.Text = _Person.Country.CountryName;
-
                 txtAddress.Text = _Person.Address;
 
                 if (!string.IsNullOrEmpty(_Person.ImagePath))
                 {
                     pbImage.ImageLocation = _Person.ImagePath;
-                    _ImageSource = _Person.ImagePath;
                 }
 
 
                 llRemoveImage.Visible = (!string.IsNullOrEmpty(pbImage.ImageLocation));
-            }
-            else
-            {
-                MessageBox.Show($"Person with ID {_Person.PersonID} doesn't exist");
-            }
+         
         }
         private void _LoadCountriesData()
         {
