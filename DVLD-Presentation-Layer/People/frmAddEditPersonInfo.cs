@@ -165,23 +165,16 @@ namespace MySolution
             _Person.SecondName = txtSecondName.Text;
             _Person.ThirdName = txtThirdName.Text;
             _Person.LastName = txtLastName.Text;
-            
             _Person.NationalNo = txtNationalNo.Text ;
             _Person.DateOfBirth = dtpDateOfBirth.Value;
-            
             _Person.Gender = Convert.ToInt16(rbFemale.Checked);
-            
             _Person.Phone = txtPhone.Text;
             _Person.Email = txtEmail.Text;
-            
             _Person.NationalityCountryID = clsCountry.Find(cbCountry.Text).CountryID;
-            
             _Person.Address = txtAddress.Text;
-
             _Person.ImagePath = pbImage.ImageLocation;
 
         }
-
         private bool _HandlePersonImage()
         {
 
@@ -220,7 +213,6 @@ namespace MySolution
             MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
-
         private void _ValidateNationalNo()
         {
             if(txtNationalNo.Text.Trim() == "")
@@ -240,7 +232,6 @@ namespace MySolution
         }
         private void _ValidateEmail()
         {
-
             if (txtEmail.Text.EndsWith("@gmail.com"))
             {
                 epValidation.SetError(txtEmail,null);
@@ -250,8 +241,7 @@ namespace MySolution
                 epValidation.SetError(txtEmail, "Invalid Email Address Foramt");          
             }
         }
-
-       private void _ChangeImageBasedOnGenderSelection()
+        private void _ChangeImageBasedOnGenderSelection()
         {
             if (string.IsNullOrEmpty(pbImage.ImageLocation))
             {
@@ -312,14 +302,6 @@ namespace MySolution
 
 
         }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-
-
         private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             if (ofdSetImage.ShowDialog() == DialogResult.OK)
@@ -330,7 +312,6 @@ namespace MySolution
             }
 
         }
-
         private void llRemoveImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             pbImage.ImageLocation = null;
@@ -338,8 +319,16 @@ namespace MySolution
             llRemoveImage.Visible = false;
 
         }
-
-
+        private void rbFemale_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(pbImage.ImageLocation))
+                pbImage.Image = Properties.Resources.Female_512;
+        }
+        private void rbMale_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(pbImage.ImageLocation))
+                pbImage.Image = Properties.Resources.Male_512;
+        }
         private void txtNationalNo_Validating(object sender, CancelEventArgs e)
         {
             if (_Mode == EnMode.AddNew)
@@ -347,7 +336,6 @@ namespace MySolution
                 _ValidateNationalNo();
             }
         }
-
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
             if(txtEmail.Text != "")
@@ -355,7 +343,6 @@ namespace MySolution
                 _ValidateEmail();
             }
         }
-
         private void txtEmpty_Validating(object sender, CancelEventArgs e)
         {
             if(((TextBox)sender).Text.Trim() == "")
@@ -367,17 +354,10 @@ namespace MySolution
                 epValidation.SetError((TextBox)sender, null);
             }
         }
-
-        private void rbFemale_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(pbImage.ImageLocation))
-                pbImage.Image = Properties.Resources.Female_512;
+            Close();
         }
 
-        private void rbMale_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(pbImage.ImageLocation))
-                pbImage.Image = Properties.Resources.Male_512;
-        }
     }
 }
