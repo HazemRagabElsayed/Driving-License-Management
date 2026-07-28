@@ -583,7 +583,7 @@
             // ofdSetImage
             // 
             this.ofdSetImage.DefaultExt = "png";
-            this.ofdSetImage.Filter = "Image Files(*.BMP;*.JPG;*.GIF;*.PNG)|*.BMP;*.JPG;*.GIF;*.PNG|All files (*.*)|*.*";
+            this.ofdSetImage.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.gif;*.bmp";
             this.ofdSetImage.Title = "Set an Image";
             // 
             // frmAddEditPersonInfo
