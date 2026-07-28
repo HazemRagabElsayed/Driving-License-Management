@@ -213,16 +213,17 @@ namespace MySolution
             MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
         }
-        private void _ValidateNationalNo()
+        private void _ValidateNationalNo(CancelEventArgs e)
         {
             if(txtNationalNo.Text.Trim() == "")
             {
+                e.Cancel = true;
                 epValidation.SetError(txtNationalNo, "This field is required!");
-
                 return;
             }
             if (clsPerson.IsExist(txtNationalNo.Text))
             {
+                e.Cancel = true;
                 epValidation.SetError(txtNationalNo, "National Number is used by another person!");
                 return;
             }
@@ -230,10 +231,11 @@ namespace MySolution
                 epValidation.SetError(txtNationalNo, null);
             
         }
-        private void _ValidateEmail()
+        private void _ValidateEmail(CancelEventArgs e)
         {
             if (txtEmail.Text.EndsWith("@gmail.com"))
             {
+                e.Cancel = true;
                 epValidation.SetError(txtEmail,null);
             }
             else
@@ -333,20 +335,21 @@ namespace MySolution
         {
             if (_Mode == EnMode.AddNew)
             {
-                _ValidateNationalNo();
+                _ValidateNationalNo(e);
             }
         }
         private void txtEmail_Validating(object sender, CancelEventArgs e)
         {
             if(txtEmail.Text != "")
             {
-                _ValidateEmail();
+                _ValidateEmail(e);
             }
         }
         private void txtEmpty_Validating(object sender, CancelEventArgs e)
         {
             if(((TextBox)sender).Text.Trim() == "")
             {
+                e.Cancel = true;
                 epValidation.SetError((TextBox)sender, "This field is required!");
             }
             else
