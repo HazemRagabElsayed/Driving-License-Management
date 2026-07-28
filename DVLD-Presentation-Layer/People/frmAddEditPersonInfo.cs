@@ -193,11 +193,12 @@ namespace MySolution
                 return true;
             }
 
-            if(_Person.ImagePath != "")
+            if(!string.IsNullOrEmpty(_Person.ImagePath))
             {
                 try
                 {
                     File.Delete(_Person.ImagePath);
+                   
                 }
                 catch
                 {
@@ -207,7 +208,10 @@ namespace MySolution
             }
 
             if (string.IsNullOrEmpty(pbImage.ImageLocation))
+            {
+                _Person.ImagePath = null;
                 return true;
+            }
 
             _ImageSource = pbImage.ImageLocation;
 
