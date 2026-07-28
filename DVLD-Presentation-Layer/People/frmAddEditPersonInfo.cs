@@ -306,7 +306,8 @@ namespace MySolution
             }
             else
             {
-                MessageBox.Show("Error Data saving failed");
+                MessageBox.Show("Error Data saving failed" ,"Error"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
 
