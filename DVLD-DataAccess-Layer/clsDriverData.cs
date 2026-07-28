@@ -238,7 +238,7 @@ namespace DVLDDataAccessLayer
 
         public static DataTable GetAll()
         {
-            string Query = $"SELECT * FROM MyDrivers_View";
+            string Query = $"SELECT * FROM Drivers_View";
 
             SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
 
