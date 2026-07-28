@@ -159,7 +159,7 @@ namespace MySolution
             }
 
         }
-        private void _AssureFinalChanges()
+        private void _FillPersonObjectWithData()
         {
             _Person.FirstName = txtFirstName.Text;
             _Person.SecondName = txtSecondName.Text;
@@ -290,7 +290,7 @@ namespace MySolution
                 return;
             }
 
-            _AssureFinalChanges();
+            _FillPersonObjectWithData();
 
             if (_Person.Save())
             {
