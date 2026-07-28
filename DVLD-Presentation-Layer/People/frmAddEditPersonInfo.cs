@@ -76,7 +76,16 @@ namespace MySolution
 
                     txtPhone.Text = "";
                     txtEmail.Text = "";
-                    cbCountry.SelectedIndex = cbCountry.FindString("Egypt");
+
+                    //Use This
+                    int CountryIndex = cbCountry.FindStringExact("Egypt");
+
+                    cbCountry.SelectedIndex = CountryIndex;
+
+                    //Or Use This instead 
+
+                    //cbCountry.Text = "Egypt";
+
                     txtAddress.Text = "";
 
                     pbImage.ImageLocation = null;
@@ -153,14 +162,6 @@ namespace MySolution
                 cbCountry.Items.Add(Row["CountryName"].ToString());
             }
 
-            //Use This
-            int CountryIndex = cbCountry.FindStringExact("Jordan");
-
-            cbCountry.SelectedIndex = CountryIndex;
-
-            //Or Use This instead 
-
-            //cbCountry.Text = "Jordan";
         }
         private void _AssureFinalChanges()
         {
