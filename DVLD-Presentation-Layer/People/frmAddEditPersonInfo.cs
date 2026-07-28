@@ -53,9 +53,42 @@ namespace MySolution
 
             _SetAllowedMinAge(18);
             _SetAllowedMaxAge(100);
-            _LoadCountryData();
+            _LoadCountriesData();
 
-           
+            switch (_Mode)
+            {
+                case EnMode.AddNew:
+
+                    lblTitle.Text = "Add New Person";
+                    _Person = new clsPerson();
+
+                    lblPersonID.Text = "N/A";
+
+                    txtFirstName.Text = "";
+                    txtSecondName.Text = "";
+                    txtThirdName.Text = "";
+                    txtLastName.Text = "";
+
+                    txtNationalNo.Text = "";
+                    dtpDateOfBirth.Value = dtpDateOfBirth.MaxDate;
+                    rbMale.Checked = true;
+
+                    txtPhone.Text = "";
+                    txtEmail.Text = "";
+                    cbCountry.SelectedIndex = cbCountry.FindString("Egypt");
+                    txtAddress.Text = "";
+
+                    break;
+                case EnMode.Update:
+
+                    _LoadPersonInfo();
+                    lblTitle.Text = "Update Person";
+                    _ImageSource = _Person.ImagePath;
+
+                    break;
+            }
+
+            
 
             llRemoveImage.Visible = (!string.IsNullOrEmpty(pbImage.ImageLocation));
         }
@@ -112,7 +145,7 @@ namespace MySolution
                 MessageBox.Show($"Person with ID {_Person.PersonID} doesn't exist");
             }
         }
-        private void _LoadCountryData()
+        private void _LoadCountriesData()
         {
             foreach (DataRow Row in clsCountry.GetAll().Rows)
             {
@@ -232,20 +265,7 @@ namespace MySolution
         }
         private void frmAddEditPersonInfo_Load(object sender, EventArgs e)
         {
-
             _ResetDefaultValues();
-
-            if (_Mode == EnMode.Update)
-            {
-                _LoadPersonInfo();
-                lblTitle.Text = "Update Person";
-                _ImageSource = _Person.ImagePath;
-            }
-            else
-            {
-                lblTitle.Text = "Add New Person";
-                _Person = new clsPerson();
-            }
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
