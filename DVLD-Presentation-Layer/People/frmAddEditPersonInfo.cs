@@ -79,6 +79,8 @@ namespace MySolution
                     cbCountry.SelectedIndex = cbCountry.FindString("Egypt");
                     txtAddress.Text = "";
 
+                    pbImage.ImageLocation = null;
+
                     break;
                 case EnMode.Update:
 
