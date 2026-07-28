@@ -148,7 +148,6 @@ namespace MySolution
                     pbImage.ImageLocation = _Person.ImagePath;
                 }
 
-
                 llRemoveImage.Visible = (!string.IsNullOrEmpty(pbImage.ImageLocation));
          
         }
@@ -179,6 +178,8 @@ namespace MySolution
             
             _Person.Address = txtAddress.Text;
 
+            _Person.ImagePath = pbImage.ImageLocation;
+
         }
 
         private bool _HandlePersonImage()
@@ -205,7 +206,6 @@ namespace MySolution
 
             if (string.IsNullOrEmpty(pbImage.ImageLocation))
             {
-                _Person.ImagePath = null;
                 return true;
             }
 
