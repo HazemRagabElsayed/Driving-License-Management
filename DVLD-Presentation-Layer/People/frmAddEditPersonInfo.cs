@@ -59,6 +59,7 @@ namespace MySolution
             {
                 case EnMode.AddNew:
 
+                    this.Text = "Add New Person";
                     lblTitle.Text = "Add New Person";
                     _Person = new clsPerson();
 
@@ -82,6 +83,7 @@ namespace MySolution
                 case EnMode.Update:
 
                     _LoadPersonInfo();
+                    this.Text = "Update Person";
                     lblTitle.Text = "Update Person";
                     _ImageSource = _Person.ImagePath;
 

@@ -600,7 +600,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddEditPersonInfo";
-            this.Text = "frmAddEditPersonInfocs";
+            this.Text = "Add Edit Person Info";
             this.Load += new System.EventHandler(this.frmAddEditPersonInfo_Load);
             this.pInputtedData.ResumeLayout(false);
             this.pInputtedData.PerformLayout();
