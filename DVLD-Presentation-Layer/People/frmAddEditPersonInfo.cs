@@ -139,7 +139,6 @@ namespace MySolution
                 if (!string.IsNullOrEmpty(_Person.ImagePath))
                 {
                     pbImage.ImageLocation = _Person.ImagePath;
-                    llRemoveImage.Visible = true;
                 }
 
 
@@ -183,7 +182,6 @@ namespace MySolution
             _Person.NationalityCountryID = clsCountry.Find(cbCountry.Text).CountryID;
             
             _Person.Address = txtAddress.Text;
-            _Person.ImagePath = pbImage.ImageLocation;
 
         }
 
