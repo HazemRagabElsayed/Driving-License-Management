@@ -81,20 +81,16 @@ namespace MySolution
 
                     pbImage.ImageLocation = null;
 
+                    llRemoveImage.Visible = false;
+
                     break;
                 case EnMode.Update:
 
-                    _LoadPersonInfo();
                     this.Text = "Update Person";
                     lblTitle.Text = "Update Person";
-                    _ImageSource = _Person.ImagePath;
-
                     break;
             }
 
-            
-
-            llRemoveImage.Visible = (!string.IsNullOrEmpty(pbImage.ImageLocation));
         }
 
         private void _SetAllowedMinAge(int Age)
@@ -139,9 +135,11 @@ namespace MySolution
                 if (!string.IsNullOrEmpty(_Person.ImagePath))
                 {
                     pbImage.ImageLocation = _Person.ImagePath;
+                    _ImageSource = _Person.ImagePath;
                 }
 
 
+                llRemoveImage.Visible = (!string.IsNullOrEmpty(pbImage.ImageLocation));
             }
             else
             {
@@ -272,6 +270,9 @@ namespace MySolution
         private void frmAddEditPersonInfo_Load(object sender, EventArgs e)
         {
             _ResetDefaultValues();
+
+            if (_Mode == EnMode.Update)
+                _LoadPersonInfo();
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
