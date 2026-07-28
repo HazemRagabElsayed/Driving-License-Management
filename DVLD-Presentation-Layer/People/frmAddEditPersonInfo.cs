@@ -318,10 +318,7 @@ namespace MySolution
             Close();
         }
 
-        private void rbGender_Checked_Changed(object sender, EventArgs e)
-        {
-            _ChangeImageBasedOnGenderSelection();
-        }
+
 
         private void llSetImage_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -369,6 +366,18 @@ namespace MySolution
             {
                 epValidation.SetError((TextBox)sender, null);
             }
+        }
+
+        private void rbFemale_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(pbImage.ImageLocation))
+                pbImage.Image = Properties.Resources.Female_512;
+        }
+
+        private void rbMale_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(pbImage.ImageLocation))
+                pbImage.Image = Properties.Resources.Male_512;
         }
     }
 }

@@ -448,6 +448,7 @@
             this.rbFemale.TabIndex = 25;
             this.rbFemale.Text = "Female";
             this.rbFemale.UseVisualStyleBackColor = true;
+            this.rbFemale.Click += new System.EventHandler(this.rbFemale_Click);
             // 
             // rbMale
             // 
@@ -460,7 +461,7 @@
             this.rbMale.TabStop = true;
             this.rbMale.Text = "Male";
             this.rbMale.UseVisualStyleBackColor = true;
-            this.rbMale.CheckedChanged += new System.EventHandler(this.rbGender_Checked_Changed);
+            this.rbMale.Click += new System.EventHandler(this.rbMale_Click);
             // 
             // txtEmail
             // 
