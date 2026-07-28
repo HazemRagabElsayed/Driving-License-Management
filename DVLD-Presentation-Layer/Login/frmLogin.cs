@@ -1,16 +1,17 @@
 ﻿using DVLDBusinessLayer;
+using MySolution.Global;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySolution.Global;
-using System.Runtime.CompilerServices;
-using System.IO;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ToolTip;
 
 
 namespace MySolution
@@ -92,23 +93,19 @@ namespace MySolution
                 txtPassword.Text = Password;
             }
         }
-
-        private void pbClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void pbClose_MouseEnter(object sender, EventArgs e)
+        private void btnClose_MouseLeave(object sender, EventArgs e)
         {
-            pbClose.BackColor = SystemColors.ControlDark;
+            btnClose.BackColor = PictureBox.DefaultBackColor;
         }
 
-        private void pbClose_MouseLeave(object sender, EventArgs e)
+        private void btnClose_MouseEnter(object sender, EventArgs e)
         {
-            pbClose.BackColor = PictureBox.DefaultBackColor;
-
+            btnClose.BackColor = SystemColors.ControlDark;
         }
-
-
     }
 }
