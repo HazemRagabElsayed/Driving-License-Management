@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MySolution.Properties {
+namespace DVLD.Properties {
     using System;
     
     

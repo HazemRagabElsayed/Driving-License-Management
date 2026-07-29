@@ -1,6 +1,6 @@
 ﻿using DVLDBusinessLayer;
-using MySolution.Properties;
-using MySolution.Tests;
+using DVLD.Properties;
+using DVLD.Tests;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Applications
+namespace DVLD.Applications
 {
     public partial class frmListTestAppointments : Form
     {

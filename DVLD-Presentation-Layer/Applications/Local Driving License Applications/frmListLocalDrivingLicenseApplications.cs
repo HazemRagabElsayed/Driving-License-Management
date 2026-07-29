@@ -1,5 +1,5 @@
 ﻿using DVLDBusinessLayer;
-using MySolution.Licenses;
+using DVLD.Licenses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Web;
 using System.Windows.Forms;
 using static DVLDBusinessLayer.clsTestType;
 
-namespace MySolution.Applications
+namespace DVLD.Applications
 {
     public partial class frmListLocalDrivingLicenseApplications : Form
     {

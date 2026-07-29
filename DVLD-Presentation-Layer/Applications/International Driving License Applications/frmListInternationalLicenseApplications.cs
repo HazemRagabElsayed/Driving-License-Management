@@ -1,7 +1,7 @@
 ﻿using DVLDBusinessLayer;
-using MySolution.Licenses;
-using MySolution.Licenses.International;
-using MySolution.People;
+using DVLD.Licenses;
+using DVLD.Licenses.International;
+using DVLD.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Applications.International_Driving_License_Applications
+namespace DVLD.Applications.International_Driving_License_Applications
 {
     public partial class frmListInternationalLicenseApplications : Form
     {

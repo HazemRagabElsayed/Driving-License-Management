@@ -1,4 +1,4 @@
-﻿namespace MySolution.People
+﻿namespace DVLD.People
 {
     partial class frmListPeople
     {
@@ -86,7 +86,7 @@
             // 
             // showDetailsToolStripMenuItem
             // 
-            this.showDetailsToolStripMenuItem.Image = global::MySolution.Properties.Resources.PersonDetails_32;
+            this.showDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.PersonDetails_32;
             this.showDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
             this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
@@ -100,7 +100,7 @@
             // 
             // addNewPersonToolStripMenuItem
             // 
-            this.addNewPersonToolStripMenuItem.Image = global::MySolution.Properties.Resources.Add_Person_40;
+            this.addNewPersonToolStripMenuItem.Image = global::DVLD.Properties.Resources.Add_Person_40;
             this.addNewPersonToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.addNewPersonToolStripMenuItem.Name = "addNewPersonToolStripMenuItem";
             this.addNewPersonToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
@@ -109,7 +109,7 @@
             // 
             // editToolStripMenuItem
             // 
-            this.editToolStripMenuItem.Image = global::MySolution.Properties.Resources.edit_32;
+            this.editToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit_32;
             this.editToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
@@ -118,7 +118,7 @@
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Image = global::MySolution.Properties.Resources.Delete_32;
+            this.deleteToolStripMenuItem.Image = global::DVLD.Properties.Resources.Delete_32;
             this.deleteToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             this.deleteToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
@@ -132,7 +132,7 @@
             // 
             // sendEmailToolStripMenuItem
             // 
-            this.sendEmailToolStripMenuItem.Image = global::MySolution.Properties.Resources.send_email_32;
+            this.sendEmailToolStripMenuItem.Image = global::DVLD.Properties.Resources.send_email_32;
             this.sendEmailToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.sendEmailToolStripMenuItem.Name = "sendEmailToolStripMenuItem";
             this.sendEmailToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
@@ -141,7 +141,7 @@
             // 
             // phoneToolStripMenuItem
             // 
-            this.phoneToolStripMenuItem.Image = global::MySolution.Properties.Resources.call_32;
+            this.phoneToolStripMenuItem.Image = global::DVLD.Properties.Resources.call_32;
             this.phoneToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.phoneToolStripMenuItem.Name = "phoneToolStripMenuItem";
             this.phoneToolStripMenuItem.Size = new System.Drawing.Size(186, 46);
@@ -223,7 +223,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::MySolution.Properties.Resources.People_400;
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.People_400;
             this.pictureBox2.Location = new System.Drawing.Point(556, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(189, 121);
@@ -235,7 +235,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(1064, 416);
             this.btnClose.Name = "btnClose";
@@ -248,7 +248,7 @@
             // pbAddNewPerson
             // 
             this.pbAddNewPerson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAddNewPerson.Image = global::MySolution.Properties.Resources.Add_Person_40;
+            this.pbAddNewPerson.Image = global::DVLD.Properties.Resources.Add_Person_40;
             this.pbAddNewPerson.Location = new System.Drawing.Point(1101, 188);
             this.pbAddNewPerson.Name = "pbAddNewPerson";
             this.pbAddNewPerson.Size = new System.Drawing.Size(73, 46);

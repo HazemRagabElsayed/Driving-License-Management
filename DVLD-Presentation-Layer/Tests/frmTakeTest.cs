@@ -1,7 +1,7 @@
 ﻿using DVLDBusinessLayer;
-using MySolution.Global;
-using MySolution.Properties;
-using MySolution.Tests.Controls;
+using DVLD.Global;
+using DVLD.Properties;
+using DVLD.Tests.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Tests
+namespace DVLD.Tests
 {
     public partial class frmTakeTest : Form
     {

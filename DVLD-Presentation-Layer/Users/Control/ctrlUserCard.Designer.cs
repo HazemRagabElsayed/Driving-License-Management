@@ -1,4 +1,4 @@
-﻿namespace MySolution.Users.Control
+﻿namespace DVLD.Users.Control
 {
     partial class ctrlUserCard
     {
@@ -35,7 +35,7 @@
             this.Label2 = new System.Windows.Forms.Label();
             this.lblUserID = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.ctrlPersonCard1 = new MySolution.ctrlPersonCard();
+            this.ctrlPersonCard1 = new DVLD.ctrlPersonCard();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 

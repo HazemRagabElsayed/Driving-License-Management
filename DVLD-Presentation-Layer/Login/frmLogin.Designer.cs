@@ -1,4 +1,4 @@
-﻿namespace MySolution
+﻿namespace DVLD
 {
     partial class frmLogin
     {
@@ -121,7 +121,7 @@
             // 
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnLogin.Image = global::MySolution.Properties.Resources.sign_in_32;
+            this.btnLogin.Image = global::DVLD.Properties.Resources.sign_in_32;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.Location = new System.Drawing.Point(224, 251);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -135,7 +135,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Image = global::MySolution.Properties.Resources.Number_32;
+            this.pictureBox3.Image = global::DVLD.Properties.Resources.Number_32;
             this.pictureBox3.Location = new System.Drawing.Point(540, 179);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 20);
@@ -146,7 +146,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox4.Image = global::MySolution.Properties.Resources.Person_32;
+            this.pictureBox4.Image = global::DVLD.Properties.Resources.Person_32;
             this.pictureBox4.Location = new System.Drawing.Point(540, 136);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 20);
@@ -192,7 +192,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::MySolution.Properties.Resources.Person_32;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.Person_32;
             this.pictureBox1.Location = new System.Drawing.Point(113, 135);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 26);
@@ -203,7 +203,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox5.Image = global::MySolution.Properties.Resources.Number_32;
+            this.pictureBox5.Image = global::DVLD.Properties.Resources.Number_32;
             this.pictureBox5.Location = new System.Drawing.Point(113, 171);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 26);
@@ -247,7 +247,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::MySolution.Properties.Resources.wallpaper;
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.wallpaper;
             this.pictureBox2.Location = new System.Drawing.Point(37, 47);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(302, 172);
@@ -296,7 +296,7 @@
             this.btnClose.CausesValidation = false;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::MySolution.Properties.Resources.closeBlack32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.closeBlack32;
             this.btnClose.Location = new System.Drawing.Point(371, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";

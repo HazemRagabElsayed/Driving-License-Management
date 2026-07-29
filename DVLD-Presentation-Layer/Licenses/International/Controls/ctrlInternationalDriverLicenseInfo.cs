@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Licenses.International.Controls
+namespace DVLD.Licenses.International.Controls
 {
     public partial class ctrlInternationalDriverLicenseInfo : UserControl
     {

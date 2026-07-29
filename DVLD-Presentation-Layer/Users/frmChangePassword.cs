@@ -1,5 +1,5 @@
 ﻿using DVLDBusinessLayer;
-using MySolution.Global;
+using DVLD.Global;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Users
+namespace DVLD.Users
 {
     public partial class frmChangePassword : Form
     {

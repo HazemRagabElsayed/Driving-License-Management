@@ -1,14 +1,14 @@
-﻿using MySolution.Applications;
-using MySolution.Applications.International_Driving_License_Applications;
-using MySolution.Applications.Release_Detained_License;
-using MySolution.Applications.Renew_Local_License;
-using MySolution.Applications.Replace_Local_License;
-using MySolution.Drivers;
-using MySolution.Global;
-using MySolution.Licenses.DetainedLicenses;
-using MySolution.People;
-using MySolution.Tests.TestTypes;
-using MySolution.Users;
+﻿using DVLD.Applications;
+using DVLD.Applications.International_Driving_License_Applications;
+using DVLD.Applications.Release_Detained_License;
+using DVLD.Applications.Renew_Local_License;
+using DVLD.Applications.Replace_Local_License;
+using DVLD.Drivers;
+using DVLD.Global;
+using DVLD.Licenses.DetainedLicenses;
+using DVLD.People;
+using DVLD.Tests.TestTypes;
+using DVLD.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution
+namespace DVLD
 {
     public partial class frmMain : Form
     {

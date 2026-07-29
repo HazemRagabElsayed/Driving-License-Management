@@ -1,4 +1,4 @@
-﻿namespace MySolution.Tests.Controls
+﻿namespace DVLD.Tests.Controls
 {
     partial class ctrlScheduledTest
     {
@@ -108,7 +108,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::MySolution.Properties.Resources.Number_32;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.Number_32;
             this.pictureBox1.Location = new System.Drawing.Point(164, 337);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 20);
@@ -139,7 +139,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox4.Image = global::MySolution.Properties.Resources.Count_32;
+            this.pictureBox4.Image = global::DVLD.Properties.Resources.Count_32;
             this.pictureBox4.Location = new System.Drawing.Point(164, 253);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 20);
@@ -170,7 +170,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Image = global::MySolution.Properties.Resources.Number_32;
+            this.pictureBox3.Image = global::DVLD.Properties.Resources.Number_32;
             this.pictureBox3.Location = new System.Drawing.Point(164, 169);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 20);
@@ -201,7 +201,7 @@
             // pictureBox11
             // 
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox11.Image = global::MySolution.Properties.Resources.Person_32;
+            this.pictureBox11.Image = global::DVLD.Properties.Resources.Person_32;
             this.pictureBox11.Location = new System.Drawing.Point(164, 225);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(31, 20);
@@ -232,7 +232,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::MySolution.Properties.Resources.License_Type_32;
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.License_Type_32;
             this.pictureBox2.Location = new System.Drawing.Point(164, 197);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 20);
@@ -263,7 +263,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox10.Image = global::MySolution.Properties.Resources.Calendar_32;
+            this.pictureBox10.Image = global::DVLD.Properties.Resources.Calendar_32;
             this.pictureBox10.Location = new System.Drawing.Point(164, 281);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(31, 20);
@@ -274,7 +274,7 @@
             // pictureBox15
             // 
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox15.Image = global::MySolution.Properties.Resources.money_32;
+            this.pictureBox15.Image = global::DVLD.Properties.Resources.money_32;
             this.pictureBox15.Location = new System.Drawing.Point(164, 309);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(31, 20);
@@ -327,7 +327,7 @@
             // 
             // pbTestType
             // 
-            this.pbTestType.Image = global::MySolution.Properties.Resources.Vision_512;
+            this.pbTestType.Image = global::DVLD.Properties.Resources.Vision_512;
             this.pbTestType.Location = new System.Drawing.Point(193, 19);
             this.pbTestType.Name = "pbTestType";
             this.pbTestType.Size = new System.Drawing.Size(109, 99);

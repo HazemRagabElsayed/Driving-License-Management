@@ -1,4 +1,4 @@
-﻿namespace MySolution.People
+﻿namespace DVLD.People
 {
     partial class frmShowPersonInfo
     {
@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.ctrlPersonCard1 = new MySolution.ctrlPersonCard();
+            this.ctrlPersonCard1 = new DVLD.ctrlPersonCard();
             this.SuspendLayout();
             // 
             // label1
@@ -50,7 +50,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(686, 387);
             this.btnClose.Name = "btnClose";

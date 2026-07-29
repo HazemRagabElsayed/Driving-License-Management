@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Users
+namespace DVLD.Users
 {
     public partial class frmListUsers : Form
     {

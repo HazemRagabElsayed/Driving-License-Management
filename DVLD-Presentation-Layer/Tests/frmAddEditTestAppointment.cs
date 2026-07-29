@@ -1,7 +1,7 @@
 ﻿using DVLDBusinessLayer;
-using MySolution.Global;
-using MySolution.Global_Classes;
-using MySolution.Properties;
+using DVLD.Global;
+using DVLD.Global_Classes;
+using DVLD.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Tests
+namespace DVLD.Tests
 {
 
 

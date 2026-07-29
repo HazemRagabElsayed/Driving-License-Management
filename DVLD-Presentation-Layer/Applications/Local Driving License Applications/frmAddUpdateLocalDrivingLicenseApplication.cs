@@ -1,7 +1,7 @@
 ﻿using DVLDBusinessLayer;
-using MySolution.Global;
-using MySolution.Global_Classes;
-using MySolution.People.Controls;
+using DVLD.Global;
+using DVLD.Global_Classes;
+using DVLD.People.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 using System.Web.Hosting;
 using System.Windows.Forms;
 
-namespace MySolution.Applications
+namespace DVLD.Applications
 {
     public partial class frmAddUpdateLocalDrivingLicenseApplication : Form
     {

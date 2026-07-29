@@ -1,4 +1,4 @@
-﻿namespace MySolution.Applications
+﻿namespace DVLD.Applications
 {
     partial class frmShowLocalDrivingApplicationInfo
     {
@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.btnClose = new System.Windows.Forms.Button();
-            this.ctrlLocalDrivingApplicationInfo1 = new MySolution.Applications.ctrlLocalDrivingApplicationInfo();
+            this.ctrlLocalDrivingApplicationInfo1 = new DVLD.Applications.ctrlLocalDrivingApplicationInfo();
             this.SuspendLayout();
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(580, 291);
             this.btnClose.Name = "btnClose";

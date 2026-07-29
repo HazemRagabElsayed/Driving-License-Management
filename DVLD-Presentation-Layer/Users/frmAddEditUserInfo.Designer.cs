@@ -1,4 +1,4 @@
-﻿namespace MySolution.Users
+﻿namespace DVLD.Users
 {
     partial class frmAddEditUserInfo
     {
@@ -32,7 +32,7 @@
             this.tbAddEditUser = new System.Windows.Forms.TabControl();
             this.tbPersonalInfo = new System.Windows.Forms.TabPage();
             this.btnNext = new System.Windows.Forms.Button();
-            this.ctrlPersonCardWithFilter1 = new MySolution.People.Controls.ctrlPersonCardWithFilter();
+            this.ctrlPersonCardWithFilter1 = new DVLD.People.Controls.ctrlPersonCardWithFilter();
             this.tbLoginInfo = new System.Windows.Forms.TabPage();
             this.chkIsActive = new System.Windows.Forms.CheckBox();
             this.lblUserID = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             this.btnNext.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
             this.btnNext.FlatAppearance.BorderSize = 2;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNext.Image = global::MySolution.Properties.Resources.Next_32;
+            this.btnNext.Image = global::DVLD.Properties.Resources.Next_32;
             this.btnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNext.Location = new System.Drawing.Point(675, 418);
             this.btnNext.Name = "btnNext";
@@ -162,7 +162,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox4.Image = global::MySolution.Properties.Resources.Number_32;
+            this.pictureBox4.Image = global::DVLD.Properties.Resources.Number_32;
             this.pictureBox4.Location = new System.Drawing.Point(166, 46);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 20);
@@ -183,7 +183,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Image = global::MySolution.Properties.Resources.Person_32;
+            this.pictureBox3.Image = global::DVLD.Properties.Resources.Person_32;
             this.pictureBox3.Location = new System.Drawing.Point(166, 72);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 20);
@@ -204,7 +204,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::MySolution.Properties.Resources.Number_32;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.Number_32;
             this.pictureBox1.Location = new System.Drawing.Point(166, 126);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 20);
@@ -225,7 +225,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::MySolution.Properties.Resources.Number_32;
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(166, 99);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 20);
@@ -289,7 +289,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(608, 582);
             this.btnClose.Name = "btnClose";
@@ -304,7 +304,7 @@
             this.btnSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnSave.Enabled = false;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::MySolution.Properties.Resources.Save_32;
+            this.btnSave.Image = global::DVLD.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(724, 582);
             this.btnSave.Name = "btnSave";

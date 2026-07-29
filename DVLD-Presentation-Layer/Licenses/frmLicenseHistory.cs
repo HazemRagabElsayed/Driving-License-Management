@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Licenses
+namespace DVLD.Licenses
 {
     public partial class frmLicenseHistory : Form
     {

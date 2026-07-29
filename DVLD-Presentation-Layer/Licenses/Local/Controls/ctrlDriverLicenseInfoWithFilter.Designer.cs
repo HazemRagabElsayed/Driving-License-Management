@@ -1,4 +1,4 @@
-﻿namespace MySolution.Licenses.Local.Controls
+﻿namespace DVLD.Licenses.Local.Controls
 {
     partial class ctrlDriverLicenseInfoWithFilter
     {
@@ -33,7 +33,7 @@
             this.btnFind = new System.Windows.Forms.Button();
             this.txtLicenseID = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.ctrlDriverLicenseInfo1 = new MySolution.Licenses.ctrlDriverLicenseInfo();
+            this.ctrlDriverLicenseInfo1 = new DVLD.Licenses.ctrlDriverLicenseInfo();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbLicenseFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -53,7 +53,7 @@
             // 
             // btnFind
             // 
-            this.btnFind.Image = global::MySolution.Properties.Resources.License_View_32;
+            this.btnFind.Image = global::DVLD.Properties.Resources.License_View_32;
             this.btnFind.Location = new System.Drawing.Point(418, 18);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(71, 50);

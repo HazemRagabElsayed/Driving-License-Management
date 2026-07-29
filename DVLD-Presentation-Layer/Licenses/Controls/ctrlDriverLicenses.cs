@@ -1,7 +1,7 @@
 ﻿using DVLDBusinessLayer;
-using MySolution.Applications;
-using MySolution.Licenses.International;
-using MySolution.People.Controls;
+using DVLD.Applications;
+using DVLD.Licenses.International;
+using DVLD.People.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Licenses.Controls
+namespace DVLD.Licenses.Controls
 {
     public partial class ctrlDriverLicenses : UserControl
     {

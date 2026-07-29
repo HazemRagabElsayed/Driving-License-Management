@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MySolution.Tests.TestTypes
+namespace DVLD.Tests.TestTypes
 {
     public partial class frmListTestTypes : Form
     {

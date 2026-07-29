@@ -1,4 +1,4 @@
-﻿namespace MySolution.Applications
+﻿namespace DVLD.Applications
 {
     partial class frmListTestAppointments
     {
@@ -40,7 +40,7 @@
             this.editTestAppointmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TakeTestToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-            this.ctrlApplicationInfo1 = new MySolution.Applications.ctrlLocalDrivingApplicationInfo();
+            this.ctrlApplicationInfo1 = new DVLD.Applications.ctrlLocalDrivingApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.pbTestType)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddNewTestAppointment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTestAppointmentsList)).BeginInit();
@@ -58,7 +58,7 @@
             // 
             // pbTestType
             // 
-            this.pbTestType.Image = global::MySolution.Properties.Resources.Vision_512;
+            this.pbTestType.Image = global::DVLD.Properties.Resources.Vision_512;
             this.pbTestType.Location = new System.Drawing.Point(263, 12);
             this.pbTestType.Name = "pbTestType";
             this.pbTestType.Size = new System.Drawing.Size(161, 94);
@@ -92,7 +92,7 @@
             // pbAddNewTestAppointment
             // 
             this.pbAddNewTestAppointment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAddNewTestAppointment.Image = global::MySolution.Properties.Resources.AddAppointment_32;
+            this.pbAddNewTestAppointment.Image = global::DVLD.Properties.Resources.AddAppointment_32;
             this.pbAddNewTestAppointment.Location = new System.Drawing.Point(642, 424);
             this.pbAddNewTestAppointment.Name = "pbAddNewTestAppointment";
             this.pbAddNewTestAppointment.Size = new System.Drawing.Size(33, 30);
@@ -105,7 +105,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(565, 655);
             this.btnClose.Name = "btnClose";
@@ -140,7 +140,7 @@
             // 
             // editTestAppointmentToolStripMenuItem
             // 
-            this.editTestAppointmentToolStripMenuItem.Image = global::MySolution.Properties.Resources.edit_32;
+            this.editTestAppointmentToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit_32;
             this.editTestAppointmentToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.editTestAppointmentToolStripMenuItem.Name = "editTestAppointmentToolStripMenuItem";
             this.editTestAppointmentToolStripMenuItem.Size = new System.Drawing.Size(196, 38);
@@ -149,7 +149,7 @@
             // 
             // TakeTestToolStripMenuItem
             // 
-            this.TakeTestToolStripMenuItem.Image = global::MySolution.Properties.Resources.Test_32;
+            this.TakeTestToolStripMenuItem.Image = global::DVLD.Properties.Resources.Test_32;
             this.TakeTestToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.TakeTestToolStripMenuItem.Name = "TakeTestToolStripMenuItem";
             this.TakeTestToolStripMenuItem.Size = new System.Drawing.Size(196, 38);

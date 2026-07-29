@@ -13,9 +13,9 @@ using System.Web.UI;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using System.IO;
-using MySolution.Global_Classes;
+using DVLD.Global_Classes;
 
-namespace MySolution
+namespace DVLD
 {
     public partial class frmAddEditPersonInfo : Form
     {

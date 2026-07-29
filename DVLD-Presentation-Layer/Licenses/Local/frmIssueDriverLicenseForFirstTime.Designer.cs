@@ -1,4 +1,4 @@
-﻿namespace MySolution.Licenses
+﻿namespace DVLD.Licenses
 {
     partial class frmIssueDriverLicenseForFirstTime
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlApplicationInfo1 = new MySolution.Applications.ctrlLocalDrivingApplicationInfo();
+            this.ctrlApplicationInfo1 = new DVLD.Applications.ctrlLocalDrivingApplicationInfo();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             // pictureBox14
             // 
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox14.Image = global::MySolution.Properties.Resources.User_32__2;
+            this.pictureBox14.Image = global::DVLD.Properties.Resources.User_32__2;
             this.pictureBox14.Location = new System.Drawing.Point(71, 312);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(31, 20);
@@ -77,7 +77,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(460, 422);
             this.btnClose.Name = "btnClose";
@@ -91,7 +91,7 @@
             // 
             this.btnIssueLicense.BackColor = System.Drawing.SystemColors.Control;
             this.btnIssueLicense.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIssueLicense.Image = global::MySolution.Properties.Resources.IssueDrivingLicense_32;
+            this.btnIssueLicense.Image = global::DVLD.Properties.Resources.IssueDrivingLicense_32;
             this.btnIssueLicense.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnIssueLicense.Location = new System.Drawing.Point(576, 422);
             this.btnIssueLicense.Name = "btnIssueLicense";

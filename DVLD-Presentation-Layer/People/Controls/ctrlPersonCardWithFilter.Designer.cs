@@ -1,4 +1,4 @@
-﻿namespace MySolution.People.Controls
+﻿namespace DVLD.People.Controls
 {
     partial class ctrlPersonCardWithFilter
     {
@@ -34,7 +34,7 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cbFilter = new System.Windows.Forms.ComboBox();
-            this.ctrlPersonCard1 = new MySolution.ctrlPersonCard();
+            this.ctrlPersonCard1 = new DVLD.ctrlPersonCard();
             this.gbFilter.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAddNewPerson)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearchPerson)).BeginInit();
@@ -57,7 +57,7 @@
             // pbAddNewPerson
             // 
             this.pbAddNewPerson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAddNewPerson.Image = global::MySolution.Properties.Resources.AddPerson_32;
+            this.pbAddNewPerson.Image = global::DVLD.Properties.Resources.AddPerson_32;
             this.pbAddNewPerson.Location = new System.Drawing.Point(510, 25);
             this.pbAddNewPerson.Name = "pbAddNewPerson";
             this.pbAddNewPerson.Size = new System.Drawing.Size(48, 34);
@@ -71,7 +71,7 @@
             // pbSearchPerson
             // 
             this.pbSearchPerson.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbSearchPerson.Image = global::MySolution.Properties.Resources.SearchPerson;
+            this.pbSearchPerson.Image = global::DVLD.Properties.Resources.SearchPerson;
             this.pbSearchPerson.Location = new System.Drawing.Point(456, 25);
             this.pbSearchPerson.Name = "pbSearchPerson";
             this.pbSearchPerson.Size = new System.Drawing.Size(48, 34);

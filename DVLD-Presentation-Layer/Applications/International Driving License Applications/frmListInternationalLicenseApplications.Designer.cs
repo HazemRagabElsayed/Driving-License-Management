@@ -1,4 +1,4 @@
-﻿namespace MySolution.Applications.International_Driving_License_Applications
+﻿namespace DVLD.Applications.International_Driving_License_Applications
 {
     partial class frmListInternationalLicenseApplications
     {
@@ -54,7 +54,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::MySolution.Properties.Resources.International_32;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.International_32;
             this.pictureBox1.Location = new System.Drawing.Point(599, 81);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(36, 36);
@@ -73,7 +73,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::MySolution.Properties.Resources.Applications;
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.Applications;
             this.pictureBox2.Location = new System.Drawing.Point(446, 44);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(189, 121);
@@ -107,7 +107,7 @@
             // pbAddNewIntLicenseApplication
             // 
             this.pbAddNewIntLicenseApplication.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbAddNewIntLicenseApplication.Image = global::MySolution.Properties.Resources.New_Application_64;
+            this.pbAddNewIntLicenseApplication.Image = global::DVLD.Properties.Resources.New_Application_64;
             this.pbAddNewIntLicenseApplication.Location = new System.Drawing.Point(986, 182);
             this.pbAddNewIntLicenseApplication.Name = "pbAddNewIntLicenseApplication";
             this.pbAddNewIntLicenseApplication.Size = new System.Drawing.Size(82, 74);
@@ -140,7 +140,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(958, 441);
             this.btnClose.Name = "btnClose";
@@ -176,7 +176,7 @@
             // 
             // ShowPersonDetailsToolStripMenuItem
             // 
-            this.ShowPersonDetailsToolStripMenuItem.Image = global::MySolution.Properties.Resources.PersonDetails_32;
+            this.ShowPersonDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.PersonDetails_32;
             this.ShowPersonDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ShowPersonDetailsToolStripMenuItem.Name = "ShowPersonDetailsToolStripMenuItem";
             this.ShowPersonDetailsToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
@@ -185,7 +185,7 @@
             // 
             // ShowLicenseDetailsToolStripMenuItem
             // 
-            this.ShowLicenseDetailsToolStripMenuItem.Image = global::MySolution.Properties.Resources.License_View_32;
+            this.ShowLicenseDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.License_View_32;
             this.ShowLicenseDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ShowLicenseDetailsToolStripMenuItem.Name = "ShowLicenseDetailsToolStripMenuItem";
             this.ShowLicenseDetailsToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
@@ -194,7 +194,7 @@
             // 
             // ShowPersonLicenseHistoryToolStripMenuItem
             // 
-            this.ShowPersonLicenseHistoryToolStripMenuItem.Image = global::MySolution.Properties.Resources.PersonLicenseHistory_32;
+            this.ShowPersonLicenseHistoryToolStripMenuItem.Image = global::DVLD.Properties.Resources.PersonLicenseHistory_32;
             this.ShowPersonLicenseHistoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ShowPersonLicenseHistoryToolStripMenuItem.Name = "ShowPersonLicenseHistoryToolStripMenuItem";
             this.ShowPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(241, 38);

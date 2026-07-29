@@ -1,4 +1,4 @@
-﻿namespace MySolution.Tests.TestTypes
+﻿namespace DVLD.Tests.TestTypes
 {
     partial class frmEditTestType
     {
@@ -54,7 +54,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.Control;
             this.btnSave.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Image = global::MySolution.Properties.Resources.Save_32;
+            this.btnSave.Image = global::DVLD.Properties.Resources.Save_32;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSave.Location = new System.Drawing.Point(301, 274);
             this.btnSave.Name = "btnSave";
@@ -68,7 +68,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::MySolution.Properties.Resources.ApplicationTitle;
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.ApplicationTitle;
             this.pictureBox1.Location = new System.Drawing.Point(101, 131);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 20);
@@ -79,7 +79,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox7.Image = global::MySolution.Properties.Resources.money_32;
+            this.pictureBox7.Image = global::DVLD.Properties.Resources.money_32;
             this.pictureBox7.Location = new System.Drawing.Point(101, 247);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(31, 20);
@@ -152,7 +152,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(185, 274);
             this.btnClose.Name = "btnClose";
@@ -166,7 +166,7 @@
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::MySolution.Properties.Resources.ApplicationTitle;
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.ApplicationTitle;
             this.pictureBox2.Location = new System.Drawing.Point(101, 157);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 20);

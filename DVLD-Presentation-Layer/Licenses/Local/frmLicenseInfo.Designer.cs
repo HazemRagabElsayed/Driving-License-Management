@@ -1,4 +1,4 @@
-﻿namespace MySolution.Licenses
+﻿namespace DVLD.Licenses
 {
     partial class frmLicenseInfo
     {
@@ -31,7 +31,7 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
-            this.ctrlLicenseInfo1 = new MySolution.Licenses.ctrlDriverLicenseInfo();
+            this.ctrlLicenseInfo1 = new DVLD.Licenses.ctrlDriverLicenseInfo();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::MySolution.Properties.Resources.LicenseView_400;
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.LicenseView_400;
             this.pictureBox2.Location = new System.Drawing.Point(277, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(189, 121);
@@ -62,7 +62,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
+            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(621, 443);
             this.btnClose.Name = "btnClose";
