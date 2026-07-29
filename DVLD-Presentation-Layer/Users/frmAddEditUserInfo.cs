@@ -183,9 +183,7 @@ namespace MySolution.Users
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if(epUserNameValidation.GetError(txtUserName) != "" ||
-               epPasswordValidation.GetError(txtPassword) != "" ||
-               epConfirmPasswordValidation.GetError(txtConfirmPassword) != "")
+            if(!ValidateChildren())
             {
 
                 MessageBox.Show("Some fields are not valid!" +
@@ -210,8 +208,7 @@ namespace MySolution.Users
             }
             else
             {
-                MessageBox.Show("Some fields are not valid!" +
-                    ", put the mouse over the red icon(s) to see the error", "Validation Error"
+                MessageBox.Show("Data is not saved successfully", "Error"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
                 
