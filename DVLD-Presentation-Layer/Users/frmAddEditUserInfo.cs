@@ -51,7 +51,7 @@ namespace MySolution.Users
             }
 
         }
-        void _FillUserObjectWithData()
+        void _FillUserObject()
         {
             _User.PersonID = ctrlPersonCardWithFilter1.Person.PersonID;
             _User.UserName = txtUserName.Text;
@@ -59,7 +59,7 @@ namespace MySolution.Users
             _User.IsActive = chkIsActive.Checked;
         }
 
-        void _FillFormWithUserData()
+        void _FillUserForm()
         {
             lblUserID.Text = _User.UserID.ToString();
             txtUserName.Text = _User.UserName;
@@ -94,7 +94,7 @@ namespace MySolution.Users
                 if (ctrlPersonCardWithFilter1.Person != null)
                 {
 
-                    _FillFormWithUserData();
+                    _FillUserForm();
 
                 }
 
@@ -200,7 +200,7 @@ namespace MySolution.Users
                 return;
             }
 
-            _FillUserObjectWithData();
+            _FillUserObject();
 
             if (_User.Save())
             {
