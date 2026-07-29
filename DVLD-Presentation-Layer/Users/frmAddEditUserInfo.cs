@@ -37,6 +37,7 @@ namespace MySolution.Users
         private bool _EnableFilter
         {
             set { ctrlPersonCardWithFilter1.EnableFilter = value; }
+
         }
         private bool _EnableLoginInfo
         {
@@ -48,6 +49,7 @@ namespace MySolution.Users
                 chkIsActive.Enabled = value;
                 btnSave.Enabled = value;
             }
+
         }
         void _FillUserObjectWithData()
         {
@@ -72,6 +74,7 @@ namespace MySolution.Users
                 lblActionTitle.Text = "Add New User";
                 _EnableFilter = true;
                 _EnableLoginInfo = false;
+
                 _User = new clsUser();
                 
 
