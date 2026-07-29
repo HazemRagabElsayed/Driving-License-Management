@@ -33,13 +33,9 @@ namespace MySolution.Users
 
         enum enTabControlIndex { PersonalInfo = 0, LoginInfo = 1 };
 
-        void _DisableFilter()
+        private bool _EnableFilter
         {
-            ctrlPersonCardWithFilter1.EnableFilter = false;
-        }
-        void _EnableFilter()
-        {
-            ctrlPersonCardWithFilter1.EnableFilter = true;
+            set { ctrlPersonCardWithFilter1.EnableFilter = value; }
         }
 
         void _DisableLoginInfo()
@@ -84,7 +80,7 @@ namespace MySolution.Users
             if (_Mode == enMode.AddNew)
             {
                 lblActionTitle.Text = "Add New User";
-                _EnableFilter();
+                _EnableFilter = true;
                 _DisableLoginInfo();
                 _User = new clsUser();
                 
@@ -94,7 +90,7 @@ namespace MySolution.Users
             {
                 lblActionTitle.Text = "Update User";
                 _EnableLoginInfo();
-                _DisableFilter();
+                _EnableFilter = false;
                 _User = clsUser.Find(_UserID);
 
                 if (_User != null)
@@ -219,7 +215,7 @@ namespace MySolution.Users
                 {
                     lblActionTitle.Text = "Update User";
                     lblUserID.Text = _User.UserID.ToString();
-                    _DisableFilter();
+                    _EnableFilter = false;
                 }
 
                 MessageBox.Show("Data saved successfully", "Saved", buttons: default,
