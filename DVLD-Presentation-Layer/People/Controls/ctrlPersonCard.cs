@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,7 +72,14 @@ namespace MySolution
         {
             if (!string.IsNullOrEmpty(_Person.ImagePath))
             {
-                pbImage.ImageLocation = _Person.ImagePath;
+                if (File.Exists(_Person.ImagePath))
+                {
+                    pbImage.ImageLocation = _Person.ImagePath;
+                    return;
+                }
+                MessageBox.Show("Could not find this image: = " 
+                    + _Person.ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
             else
             {
