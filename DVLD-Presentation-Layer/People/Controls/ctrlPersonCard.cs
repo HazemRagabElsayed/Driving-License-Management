@@ -15,6 +15,8 @@ namespace MySolution
     {
         private int _PersonID = -1;
 
+        clsPerson _Person;
+
         public int PersonID
         {
             get { return _PersonID; }
@@ -22,6 +24,11 @@ namespace MySolution
             {
                 _PersonID = value;
             }
+        }
+
+        public clsPerson SelectedPersonInfo
+        {
+            get { return _Person; }
         }
 
         public ctrlPersonCard()
@@ -47,42 +54,51 @@ namespace MySolution
             llEditPersonInfo.Visible = false;
         }
 
+        void _FillPersonForm()
+        {
+            _PersonID = _Person.PersonID;
+            lblPersonID.Text = _PersonID.ToString();
+
+            lblName.Text = _Person.FullName;
+
+            lblNationalNo.Text = _Person.NationalNo;
+            lblGender.Text = _Person.Gender == 0 ? "Male" : "Female";
+            lblEmail.Text = _Person.Email;
+            lblAddress.Text = _Person.Address;
+            lblDateOfBirth.Text = _Person.DateOfBirth.ToString();
+            lblPhone.Text = _Person.Phone;
+            lblCountry.Text = _Person.Country.CountryName;
+            llEditPersonInfo.Visible = true;
+        }
+
+        private void _LoadPersonImage()
+        {
+            if (!string.IsNullOrEmpty(_Person.ImagePath))
+            {
+                pbImage.ImageLocation = _Person.ImagePath;
+            }
+            else
+            {
+                if (lblGender.Text == "Male")
+                {
+                    pbImage.Image = Properties.Resources.Male_512;
+                }
+                else
+                {
+                    pbImage.Image = Properties.Resources.Female_512;
+                }
+            }
+        }
+
         public void LoadPersonInfo(int PersonID)
         {
             clsPerson Person;
 
             if((Person = clsPerson.Find(PersonID)) != null)
             {
-                _PersonID = Person.PersonID;
-                lblPersonID.Text = _PersonID.ToString();
-
-                lblName.Text = Person.FullName;
-
-                lblNationalNo.Text = Person.NationalNo;
-                lblGender.Text = Person.Gender == 0 ? "Male" : "Female";
-                lblEmail.Text = Person.Email;
-                lblAddress.Text = Person.Address;
-                lblDateOfBirth.Text = Person.DateOfBirth.ToString();
-                lblPhone.Text = Person.Phone;
-                lblCountry.Text = Person.Country.CountryName;
-
-                    if (!string.IsNullOrEmpty(Person.ImagePath))
-                    {
-                        pbImage.ImageLocation = Person.ImagePath;
-                    }
-                    else
-                    {
-                        if (lblGender.Text == "Male")
-                        {
-                            pbImage.Image = Properties.Resources.Male_512;
-                        }
-                        else 
-                        {
-                            pbImage.Image = Properties.Resources.Female_512;
-                        }
-                    }
-                    llEditPersonInfo.Visible = true;
-
+                _Person = Person;
+                _FillPersonForm();
+                _LoadPersonImage();
           
             }
             else
@@ -91,43 +107,15 @@ namespace MySolution
             }
         }
 
-
         public void LoadPersonInfo(string NationalNo)
         {
             clsPerson Person;
 
             if ((Person = clsPerson.Find(NationalNo)) != null)
             {
-                _PersonID = Person.PersonID;
-                lblPersonID.Text = _PersonID.ToString();
-
-                lblName.Text = Person.FullName;
-
-                lblNationalNo.Text = Person.NationalNo;
-                lblGender.Text = Person.Gender == 0 ? "Male" : "Female";
-                lblEmail.Text = Person.Email;
-                lblAddress.Text = Person.Address;
-                lblDateOfBirth.Text = Person.DateOfBirth.ToString();
-                lblPhone.Text = Person.Phone;
-                lblCountry.Text = Person.Country.CountryName;
-
-                if (!string.IsNullOrEmpty(Person.ImagePath))
-                {
-                    pbImage.ImageLocation = Person.ImagePath;
-                }
-                else
-                {
-                    if (lblGender.Text == "Male")
-                    {
-                        pbImage.Image = Properties.Resources.Male_512;
-                    }
-                    else
-                    {
-                        pbImage.Image = Properties.Resources.Female_512;
-                    }
-                }
-                llEditPersonInfo.Visible = true;
-
+                _Person = Person;
+                _FillPersonForm();
+                _LoadPersonImage();
 
             }
             else
