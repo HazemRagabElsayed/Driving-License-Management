@@ -73,8 +73,7 @@ namespace MySolution
             //MessageBox.Show("This Feature is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             clsGlobal.CurrentUser = null;
             _LoginForm.Show();
-            
-            ;
+            this.Close();
 
         }
 
