@@ -1,4 +1,4 @@
-﻿namespace DVLD.Applications.Release_Detained_License
+﻿namespace MySolution.Applications.Release_Detained_License
 {
     partial class frmReleaseDetainedLicenseApplication
     {
@@ -59,7 +59,7 @@
             this.lblDetainID = new System.Windows.Forms.Label();
             this.lblLicenseID = new System.Windows.Forms.Label();
             this.lblDetainDate = new System.Windows.Forms.Label();
-            this.ctrlDriverLicenseInfoWithFilter1 = new DVLD.Licenses.Local.Controls.ctrlDriverLicenseInfoWithFilter();
+            this.ctrlDriverLicenseInfoWithFilter1 = new MySolution.Licenses.Local.Controls.ctrlDriverLicenseInfoWithFilter();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -111,7 +111,7 @@
             this.btnRelease.BackColor = System.Drawing.SystemColors.Control;
             this.btnRelease.Enabled = false;
             this.btnRelease.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRelease.Image = global::DVLD.Properties.Resources.Release_Detained_License_32;
+            this.btnRelease.Image = global::MySolution.Properties.Resources.Release_Detained_License_32;
             this.btnRelease.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRelease.Location = new System.Drawing.Point(621, 559);
             this.btnRelease.Name = "btnRelease";
@@ -126,7 +126,7 @@
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
+            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(501, 559);
             this.btnClose.Name = "btnClose";
@@ -213,7 +213,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.Number_32;
+            this.pictureBox1.Image = global::MySolution.Properties.Resources.Number_32;
             this.pictureBox1.Location = new System.Drawing.Point(480, 112);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 20);
@@ -295,7 +295,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox6.Image = global::DVLD.Properties.Resources.User_32__2;
+            this.pictureBox6.Image = global::MySolution.Properties.Resources.User_32__2;
             this.pictureBox6.Location = new System.Drawing.Point(480, 55);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(31, 20);
@@ -316,7 +316,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox12.Image = global::DVLD.Properties.Resources.Calendar_32;
+            this.pictureBox12.Image = global::MySolution.Properties.Resources.Calendar_32;
             this.pictureBox12.Location = new System.Drawing.Point(149, 55);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(31, 20);
@@ -327,7 +327,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox8.Image = global::DVLD.Properties.Resources.License_Type_32;
+            this.pictureBox8.Image = global::MySolution.Properties.Resources.License_Type_32;
             this.pictureBox8.Location = new System.Drawing.Point(480, 28);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(31, 20);
@@ -338,7 +338,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox10.Image = global::DVLD.Properties.Resources.Number_32;
+            this.pictureBox10.Image = global::MySolution.Properties.Resources.Number_32;
             this.pictureBox10.Location = new System.Drawing.Point(149, 28);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(31, 20);

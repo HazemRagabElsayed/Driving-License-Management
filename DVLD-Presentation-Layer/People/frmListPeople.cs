@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.People
+namespace MySolution.People
 {
     public partial class frmListPeople : Form
     {

@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Licenses
+namespace MySolution.Licenses
 {
     public partial class ctrlDriverLicenseInfo : UserControl
     {

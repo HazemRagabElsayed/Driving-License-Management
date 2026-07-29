@@ -1,5 +1,5 @@
 ﻿using DVLDBusinessLayer;
-using DVLD.Global;
+using MySolution.Global;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 using System.Web.Security;
 using System.Windows.Forms;
 
-namespace DVLD.Licenses
+namespace MySolution.Licenses
 {
     public partial class frmIssueDriverLicenseForFirstTime : Form
     {

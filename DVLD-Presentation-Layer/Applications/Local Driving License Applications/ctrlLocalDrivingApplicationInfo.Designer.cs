@@ -1,4 +1,4 @@
-﻿namespace DVLD.Applications
+﻿namespace MySolution.Applications
 {
     partial class ctrlLocalDrivingApplicationInfo
     {
@@ -40,7 +40,7 @@
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.lblPassedTests = new System.Windows.Forms.Label();
             this.gbPersonInfo = new System.Windows.Forms.GroupBox();
-            this.ctrlApplicationInfo1 = new DVLD.Applications.Controls.ctrlApplicationInfo();
+            this.ctrlApplicationInfo1 = new MySolution.Applications.Controls.ctrlApplicationInfo();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
@@ -91,7 +91,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.License_Type_32;
+            this.pictureBox1.Image = global::MySolution.Properties.Resources.License_Type_32;
             this.pictureBox1.Location = new System.Drawing.Point(376, 27);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 20);
@@ -112,7 +112,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.Number_32;
+            this.pictureBox2.Image = global::MySolution.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(108, 27);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 20);
@@ -133,7 +133,7 @@
             // pictureBox17
             // 
             this.pictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox17.Image = global::DVLD.Properties.Resources.PassedTests_32;
+            this.pictureBox17.Image = global::MySolution.Properties.Resources.PassedTests_32;
             this.pictureBox17.Location = new System.Drawing.Point(376, 59);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(31, 20);
@@ -144,7 +144,7 @@
             // pictureBox18
             // 
             this.pictureBox18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox18.Image = global::DVLD.Properties.Resources.License_View_32;
+            this.pictureBox18.Image = global::MySolution.Properties.Resources.License_View_32;
             this.pictureBox18.Location = new System.Drawing.Point(108, 70);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(31, 20);

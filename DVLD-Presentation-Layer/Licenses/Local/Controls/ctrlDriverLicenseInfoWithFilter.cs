@@ -1,5 +1,5 @@
 ﻿using DVLDBusinessLayer;
-using DVLD.Global_Classes;
+using MySolution.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Web.Configuration;
 using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
-namespace DVLD.Licenses.Local.Controls
+namespace MySolution.Licenses.Local.Controls
 {
     public partial class ctrlDriverLicenseInfoWithFilter : UserControl
     {

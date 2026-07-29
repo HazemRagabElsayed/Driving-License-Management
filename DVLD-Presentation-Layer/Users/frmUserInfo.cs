@@ -1,4 +1,4 @@
-﻿using DVLD.Global;
+﻿using MySolution.Global;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Users
+namespace MySolution.Users
 {
     public partial class frmUserInfo : Form
     {

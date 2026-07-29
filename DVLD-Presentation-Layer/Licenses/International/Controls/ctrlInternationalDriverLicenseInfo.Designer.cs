@@ -1,4 +1,4 @@
-﻿namespace DVLD.Licenses.International.Controls
+﻿namespace MySolution.Licenses.International.Controls
 {
     partial class ctrlInternationalDriverLicenseInfo
     {
@@ -81,7 +81,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.Person_32;
+            this.pictureBox1.Image = global::MySolution.Properties.Resources.Person_32;
             this.pictureBox1.Location = new System.Drawing.Point(124, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(31, 20);
@@ -203,7 +203,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.Number_32;
+            this.pictureBox2.Image = global::MySolution.Properties.Resources.Number_32;
             this.pictureBox2.Location = new System.Drawing.Point(124, 110);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(31, 20);
@@ -234,7 +234,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox5.Image = global::DVLD.Properties.Resources.Man_32;
+            this.pictureBox5.Image = global::MySolution.Properties.Resources.Man_32;
             this.pictureBox5.Location = new System.Drawing.Point(124, 138);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(31, 20);
@@ -265,7 +265,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox7.Image = global::DVLD.Properties.Resources.Calendar_32;
+            this.pictureBox7.Image = global::MySolution.Properties.Resources.Calendar_32;
             this.pictureBox7.Location = new System.Drawing.Point(409, 166);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(31, 20);
@@ -277,7 +277,7 @@
             // 
             this.pbImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbImage.Image = global::DVLD.Properties.Resources.Male_512;
+            this.pbImage.Image = global::MySolution.Properties.Resources.Male_512;
             this.pbImage.Location = new System.Drawing.Point(551, 37);
             this.pbImage.Name = "pbImage";
             this.pbImage.Size = new System.Drawing.Size(159, 139);
@@ -298,7 +298,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox10.Image = global::DVLD.Properties.Resources.International_32;
+            this.pictureBox10.Image = global::MySolution.Properties.Resources.International_32;
             this.pictureBox10.Location = new System.Drawing.Point(124, 54);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(31, 20);
@@ -309,7 +309,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox12.Image = global::DVLD.Properties.Resources.Calendar_32;
+            this.pictureBox12.Image = global::MySolution.Properties.Resources.Calendar_32;
             this.pictureBox12.Location = new System.Drawing.Point(124, 166);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(31, 20);
@@ -330,7 +330,7 @@
             // pictureBox13
             // 
             this.pictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox13.Image = global::DVLD.Properties.Resources.Calendar_32;
+            this.pictureBox13.Image = global::MySolution.Properties.Resources.Calendar_32;
             this.pictureBox13.Location = new System.Drawing.Point(409, 110);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(31, 20);
@@ -341,7 +341,7 @@
             // pictureBox14
             // 
             this.pictureBox14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox14.Image = global::DVLD.Properties.Resources.Number_32;
+            this.pictureBox14.Image = global::MySolution.Properties.Resources.Number_32;
             this.pictureBox14.Location = new System.Drawing.Point(409, 138);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(31, 20);
@@ -352,7 +352,7 @@
             // pictureBox15
             // 
             this.pictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox15.Image = global::DVLD.Properties.Resources.Question_32;
+            this.pictureBox15.Image = global::MySolution.Properties.Resources.Question_32;
             this.pictureBox15.Location = new System.Drawing.Point(409, 82);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(31, 20);
@@ -427,7 +427,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox4.Image = global::DVLD.Properties.Resources.Number_32;
+            this.pictureBox4.Image = global::MySolution.Properties.Resources.Number_32;
             this.pictureBox4.Location = new System.Drawing.Point(124, 82);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(31, 20);
@@ -468,7 +468,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox3.Image = global::DVLD.Properties.Resources.International_32;
+            this.pictureBox3.Image = global::MySolution.Properties.Resources.International_32;
             this.pictureBox3.Location = new System.Drawing.Point(409, 54);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(31, 20);

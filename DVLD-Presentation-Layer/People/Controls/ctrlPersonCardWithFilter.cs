@@ -1,5 +1,5 @@
 ﻿using DVLDBusinessLayer;
-using DVLD.Global_Classes;
+using MySolution.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.People.Controls
+namespace MySolution.People.Controls
 {
     public partial class ctrlPersonCardWithFilter : UserControl
     {

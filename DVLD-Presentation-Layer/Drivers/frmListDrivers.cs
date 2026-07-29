@@ -1,6 +1,6 @@
 ﻿using DVLDBusinessLayer;
-using DVLD.Licenses;
-using DVLD.People;
+using MySolution.Licenses;
+using MySolution.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Drivers
+namespace MySolution.Drivers
 {
     public partial class frmListDrivers : Form
     {

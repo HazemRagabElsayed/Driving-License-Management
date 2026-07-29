@@ -1,5 +1,5 @@
 ﻿using DVLDBusinessLayer;
-using DVLD.Properties;
+using MySolution.Properties;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Tests.Controls
+namespace MySolution.Tests.Controls
 {
     public partial class ctrlScheduledTest : UserControl
     {

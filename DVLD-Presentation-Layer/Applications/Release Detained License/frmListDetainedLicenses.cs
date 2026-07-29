@@ -1,7 +1,7 @@
 ﻿using DVLDBusinessLayer;
-using DVLD.Applications;
-using DVLD.Applications.Release_Detained_License;
-using DVLD.People;
+using MySolution.Applications;
+using MySolution.Applications.Release_Detained_License;
+using MySolution.People;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Licenses.DetainedLicenses
+namespace MySolution.Licenses.DetainedLicenses
 {
     public partial class frmListDetainedLicenses : Form
     {

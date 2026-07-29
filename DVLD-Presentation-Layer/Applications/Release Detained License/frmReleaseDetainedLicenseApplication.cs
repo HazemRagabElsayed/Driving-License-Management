@@ -1,7 +1,7 @@
 ﻿using DVLDBusinessLayer;
-using DVLD.Global;
-using DVLD.Global_Classes;
-using DVLD.Licenses;
+using MySolution.Global;
+using MySolution.Global_Classes;
+using MySolution.Licenses;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Applications.Release_Detained_License
+namespace MySolution.Applications.Release_Detained_License
 {
     public partial class frmReleaseDetainedLicenseApplication : Form
     {

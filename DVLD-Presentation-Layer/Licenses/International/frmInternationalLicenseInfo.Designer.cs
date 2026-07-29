@@ -1,4 +1,4 @@
-﻿namespace DVLD.Licenses.International
+﻿namespace MySolution.Licenses.International
 {
     partial class frmInternationalLicenseInfo
     {
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ctrlInternationalDriverLicenseInfo1 = new DVLD.Licenses.International.Controls.ctrlInternationalDriverLicenseInfo();
+            this.ctrlInternationalDriverLicenseInfo1 = new MySolution.Licenses.International.Controls.ctrlInternationalDriverLicenseInfo();
             this.btnClose = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
+            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(628, 408);
             this.btnClose.Name = "btnClose";
@@ -58,7 +58,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.LicenseView_400;
+            this.pictureBox2.Image = global::MySolution.Properties.Resources.LicenseView_400;
             this.pictureBox2.Location = new System.Drawing.Point(268, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(189, 121);

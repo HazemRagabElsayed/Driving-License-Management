@@ -1,4 +1,4 @@
-﻿namespace DVLD.Applications
+﻿namespace MySolution.Applications
 {
     partial class frmListApplicationTypes
     {
@@ -97,7 +97,7 @@
             // 
             // EditApplicationTypeToolStripMenuItem
             // 
-            this.EditApplicationTypeToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit_32;
+            this.EditApplicationTypeToolStripMenuItem.Image = global::MySolution.Properties.Resources.edit_32;
             this.EditApplicationTypeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EditApplicationTypeToolStripMenuItem.Name = "EditApplicationTypeToolStripMenuItem";
             this.EditApplicationTypeToolStripMenuItem.Size = new System.Drawing.Size(201, 38);
@@ -106,7 +106,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.Application_Types_512;
+            this.pictureBox2.Image = global::MySolution.Properties.Resources.Application_Types_512;
             this.pictureBox2.Location = new System.Drawing.Point(153, 10);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(189, 121);
@@ -118,7 +118,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
+            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(372, 404);
             this.btnClose.Name = "btnClose";

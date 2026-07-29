@@ -1,4 +1,4 @@
-﻿namespace DVLD.Licenses.DetainedLicenses
+﻿namespace MySolution.Licenses.DetainedLicenses
 {
     partial class frmListDetainedLicenses
     {
@@ -83,7 +83,7 @@
             // 
             // ShowPersonDetailsToolStripMenuItem
             // 
-            this.ShowPersonDetailsToolStripMenuItem.Image = global::DVLD.Properties.Resources.PersonDetails_32;
+            this.ShowPersonDetailsToolStripMenuItem.Image = global::MySolution.Properties.Resources.PersonDetails_32;
             this.ShowPersonDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ShowPersonDetailsToolStripMenuItem.Name = "ShowPersonDetailsToolStripMenuItem";
             this.ShowPersonDetailsToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
@@ -92,7 +92,7 @@
             // 
             // ShowLicenseToolStripMenuItem
             // 
-            this.ShowLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.License_View_32;
+            this.ShowLicenseToolStripMenuItem.Image = global::MySolution.Properties.Resources.License_View_32;
             this.ShowLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ShowLicenseToolStripMenuItem.Name = "ShowLicenseToolStripMenuItem";
             this.ShowLicenseToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
@@ -101,7 +101,7 @@
             // 
             // ShowPersonLicenseHistoryToolStripMenuItem
             // 
-            this.ShowPersonLicenseHistoryToolStripMenuItem.Image = global::DVLD.Properties.Resources.PersonLicenseHistory_32;
+            this.ShowPersonLicenseHistoryToolStripMenuItem.Image = global::MySolution.Properties.Resources.PersonLicenseHistory_32;
             this.ShowPersonLicenseHistoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ShowPersonLicenseHistoryToolStripMenuItem.Name = "ShowPersonLicenseHistoryToolStripMenuItem";
             this.ShowPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
@@ -110,7 +110,7 @@
             // 
             // ReleaseDetainedLicenseToolStripMenuItem
             // 
-            this.ReleaseDetainedLicenseToolStripMenuItem.Image = global::DVLD.Properties.Resources.Release_Detained_License_32;
+            this.ReleaseDetainedLicenseToolStripMenuItem.Image = global::MySolution.Properties.Resources.Release_Detained_License_32;
             this.ReleaseDetainedLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ReleaseDetainedLicenseToolStripMenuItem.Name = "ReleaseDetainedLicenseToolStripMenuItem";
             this.ReleaseDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(241, 38);
@@ -194,7 +194,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.Detain_512;
+            this.pictureBox2.Image = global::MySolution.Properties.Resources.Detain_512;
             this.pictureBox2.Location = new System.Drawing.Point(441, 3);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(189, 121);
@@ -206,7 +206,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
+            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(953, 439);
             this.btnClose.Name = "btnClose";
@@ -219,7 +219,7 @@
             // pbDetain
             // 
             this.pbDetain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbDetain.Image = global::DVLD.Properties.Resources.Detain_64;
+            this.pbDetain.Image = global::MySolution.Properties.Resources.Detain_64;
             this.pbDetain.Location = new System.Drawing.Point(981, 180);
             this.pbDetain.Name = "pbDetain";
             this.pbDetain.Size = new System.Drawing.Size(82, 74);
@@ -233,7 +233,7 @@
             // pbRelease
             // 
             this.pbRelease.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbRelease.Image = global::DVLD.Properties.Resources.Release_Detained_License_64;
+            this.pbRelease.Image = global::MySolution.Properties.Resources.Release_Detained_License_64;
             this.pbRelease.Location = new System.Drawing.Point(893, 180);
             this.pbRelease.Name = "pbRelease";
             this.pbRelease.Size = new System.Drawing.Size(82, 74);

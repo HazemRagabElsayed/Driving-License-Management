@@ -1,4 +1,4 @@
-﻿namespace DVLD.Tests.TestTypes
+﻿namespace MySolution.Tests.TestTypes
 {
     partial class frmListTestTypes
     {
@@ -97,7 +97,7 @@
             // 
             // EditTestTypeToolStripMenuItem
             // 
-            this.EditTestTypeToolStripMenuItem.Image = global::DVLD.Properties.Resources.edit_32;
+            this.EditTestTypeToolStripMenuItem.Image = global::MySolution.Properties.Resources.edit_32;
             this.EditTestTypeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.EditTestTypeToolStripMenuItem.Name = "EditTestTypeToolStripMenuItem";
             this.EditTestTypeToolStripMenuItem.Size = new System.Drawing.Size(160, 38);
@@ -106,7 +106,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.TestType_512;
+            this.pictureBox2.Image = global::MySolution.Properties.Resources.TestType_512;
             this.pictureBox2.Location = new System.Drawing.Point(202, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(189, 121);
@@ -118,7 +118,7 @@
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
+            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(540, 404);
             this.btnClose.Name = "btnClose";

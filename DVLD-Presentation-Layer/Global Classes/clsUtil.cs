@@ -8,7 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq.Expressions;
 
-namespace DVLD.Global_Classes
+namespace MySolution.Global_Classes
 {
     public class clsUtil
     {

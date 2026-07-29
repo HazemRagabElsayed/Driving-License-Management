@@ -1,4 +1,4 @@
-﻿namespace DVLD.Licenses.Controls
+﻿namespace MySolution.Licenses.Controls
 {
     partial class ctrlDriverLicenses
     {
@@ -200,7 +200,7 @@
             // 
             // ShowLocalLicenseInfoToolStripMenuItem
             // 
-            this.ShowLocalLicenseInfoToolStripMenuItem.Image = global::DVLD.Properties.Resources.License_View_32;
+            this.ShowLocalLicenseInfoToolStripMenuItem.Image = global::MySolution.Properties.Resources.License_View_32;
             this.ShowLocalLicenseInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ShowLocalLicenseInfoToolStripMenuItem.Name = "ShowLocalLicenseInfoToolStripMenuItem";
             this.ShowLocalLicenseInfoToolStripMenuItem.Size = new System.Drawing.Size(185, 38);
@@ -216,7 +216,7 @@
             // 
             // ShowInternationalLicenseInfoToolStripMenuItem1
             // 
-            this.ShowInternationalLicenseInfoToolStripMenuItem1.Image = global::DVLD.Properties.Resources.License_View_32;
+            this.ShowInternationalLicenseInfoToolStripMenuItem1.Image = global::MySolution.Properties.Resources.License_View_32;
             this.ShowInternationalLicenseInfoToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ShowInternationalLicenseInfoToolStripMenuItem1.Name = "ShowInternationalLicenseInfoToolStripMenuItem1";
             this.ShowInternationalLicenseInfoToolStripMenuItem1.Size = new System.Drawing.Size(185, 38);

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DVLD.Global_Classes
+namespace MySolution.Global_Classes
 {
     internal class clsValidation
     {

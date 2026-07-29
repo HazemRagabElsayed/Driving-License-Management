@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD
+namespace MySolution
 {
     public partial class ctrlPersonCard : UserControl
     {

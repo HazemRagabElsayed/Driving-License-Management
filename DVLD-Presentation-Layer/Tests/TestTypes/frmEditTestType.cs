@@ -1,5 +1,5 @@
 ﻿using DVLDBusinessLayer;
-using DVLD.Global_Classes;
+using MySolution.Global_Classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Tests.TestTypes
+namespace MySolution.Tests.TestTypes
 {
     public partial class frmEditTestType : Form
     {

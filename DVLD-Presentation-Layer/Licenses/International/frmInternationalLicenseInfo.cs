@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DVLD.Licenses.International
+namespace MySolution.Licenses.International
 {
     public partial class frmInternationalLicenseInfo : Form
     {

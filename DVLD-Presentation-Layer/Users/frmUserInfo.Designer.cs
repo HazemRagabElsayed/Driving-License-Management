@@ -1,4 +1,4 @@
-﻿namespace DVLD.Users
+﻿namespace MySolution.Users
 {
     partial class frmUserInfo
     {
@@ -30,14 +30,14 @@
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.ctrlUserCard1 = new DVLD.Users.Control.ctrlUserCard();
+            this.ctrlUserCard1 = new MySolution.Users.Control.ctrlUserCard();
             this.SuspendLayout();
             // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.SystemColors.Control;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.Image = global::DVLD.Properties.Resources.Close_32;
+            this.btnClose.Image = global::MySolution.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnClose.Location = new System.Drawing.Point(705, 484);
             this.btnClose.Name = "btnClose";
