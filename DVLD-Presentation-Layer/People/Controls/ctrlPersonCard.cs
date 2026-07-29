@@ -21,7 +21,6 @@ namespace MySolution
             set
             {
                 _PersonID = value;
-                LoadPersonInfo();
             }
         }
 
@@ -48,25 +47,24 @@ namespace MySolution
             llEditPersonInfo.Visible = false;
         }
 
-        void LoadPersonInfo()
+        public void LoadPersonInfo(int PersonID)
         {
-            if(_PersonID  != -1)
-            {
+            clsPerson Person;
 
-                clsPerson Person = clsPerson.Find(_PersonID);
+            if((Person = clsPerson.Find(PersonID)) != null)
+            {
+                _PersonID = Person.PersonID;
                 lblPersonID.Text = _PersonID.ToString();
 
-                if (Person != null)
-                {
-                    lblName.Text = Person.FullName;
+                lblName.Text = Person.FullName;
 
-                    lblNationalNo.Text = Person.NationalNo;
-                    lblGender.Text = Person.Gender == 0 ? "Male" : "Female";
-                    lblEmail.Text = Person.Email;
-                    lblAddress.Text = Person.Address;
-                    lblDateOfBirth.Text = Person.DateOfBirth.ToString();
-                    lblPhone.Text = Person.Phone;
-                    lblCountry.Text = Person.Country.CountryName;
+                lblNationalNo.Text = Person.NationalNo;
+                lblGender.Text = Person.Gender == 0 ? "Male" : "Female";
+                lblEmail.Text = Person.Email;
+                lblAddress.Text = Person.Address;
+                lblDateOfBirth.Text = Person.DateOfBirth.ToString();
+                lblPhone.Text = Person.Phone;
+                lblCountry.Text = Person.Country.CountryName;
 
                     if (!string.IsNullOrEmpty(Person.ImagePath))
                     {
@@ -85,8 +83,52 @@ namespace MySolution
                     }
                     llEditPersonInfo.Visible = true;
 
-                }
           
+            }
+            else
+            {
+                _ResetDefaultValues();
+            }
+        }
+
+
+        public void LoadPersonInfo(string NationalNo)
+        {
+            clsPerson Person;
+
+            if ((Person = clsPerson.Find(NationalNo)) != null)
+            {
+                _PersonID = Person.PersonID;
+                lblPersonID.Text = _PersonID.ToString();
+
+                lblName.Text = Person.FullName;
+
+                lblNationalNo.Text = Person.NationalNo;
+                lblGender.Text = Person.Gender == 0 ? "Male" : "Female";
+                lblEmail.Text = Person.Email;
+                lblAddress.Text = Person.Address;
+                lblDateOfBirth.Text = Person.DateOfBirth.ToString();
+                lblPhone.Text = Person.Phone;
+                lblCountry.Text = Person.Country.CountryName;
+
+                if (!string.IsNullOrEmpty(Person.ImagePath))
+                {
+                    pbImage.ImageLocation = Person.ImagePath;
+                }
+                else
+                {
+                    if (lblGender.Text == "Male")
+                    {
+                        pbImage.Image = Properties.Resources.Male_512;
+                    }
+                    else
+                    {
+                        pbImage.Image = Properties.Resources.Female_512;
+                    }
+                }
+                llEditPersonInfo.Visible = true;
+
+
             }
             else
             {
@@ -98,7 +140,7 @@ namespace MySolution
         {
             frmAddEditPersonInfo frmEditPersonInfo = new frmAddEditPersonInfo(_PersonID);
             frmEditPersonInfo.ShowDialog();
-            LoadPersonInfo();
+            LoadPersonInfo(_PersonID);
         }
 
 

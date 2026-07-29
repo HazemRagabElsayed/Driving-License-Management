@@ -41,7 +41,7 @@ namespace MySolution.Users.Control
                     lblIsActive.Text = "No";
                 }
 
-                ctrlPersonCard1.PersonID = _User.PersonID;
+                ctrlPersonCard1.LoadPersonInfo(_User.PersonID);
             }
         }
 

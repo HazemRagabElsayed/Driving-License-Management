@@ -71,7 +71,7 @@ namespace MySolution.People.Controls
             if (_PersonID != -1)
             {
                 cbFilter.SelectedIndex = (int)enSelectedIndex.PersonID;
-                ctrlPersonCard1.PersonID = _PersonID;
+                ctrlPersonCard1.LoadPersonInfo(_PersonID);
                 txtFilter.Text = _PersonID.ToString();
                 _Person = clsPerson.Find(_PersonID);
 
@@ -82,7 +82,7 @@ namespace MySolution.People.Controls
         {
             if (_PersonID != -1)
             {
-                ctrlPersonCard1.PersonID = _PersonID;
+                ctrlPersonCard1.LoadPersonInfo( _PersonID);
                 txtFilter.Text = _PersonID.ToString();
                 _Person = clsPerson.Find(_PersonID);
 
@@ -136,7 +136,7 @@ namespace MySolution.People.Controls
             }
             else
             {
-                ctrlPersonCard1.PersonID = _Person.PersonID;
+                ctrlPersonCard1.LoadPersonInfo(_Person.PersonID);
             }
 
         }

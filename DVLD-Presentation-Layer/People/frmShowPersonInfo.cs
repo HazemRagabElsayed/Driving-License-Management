@@ -31,7 +31,7 @@ namespace MySolution.People
 
         private void frmPersonDetails_Load(object sender, EventArgs e)
         {
-            ctrlPersonCard1.PersonID = _PersonID;
+            ctrlPersonCard1.LoadPersonInfo(_PersonID);
         }
     }
 }
