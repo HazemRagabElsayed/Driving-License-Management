@@ -29,11 +29,11 @@ namespace MySolution
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            clsGlobal.CurrentUser = clsUser.Find(txtUserName.Text, txtPassword.Text);
+            clsUser CurrentUser = clsUser.Find(txtUserName.Text, txtPassword.Text);
 
-            if(clsGlobal.CurrentUser != null)
+            if(CurrentUser != null)
             {
-                if (clsGlobal.CurrentUser.IsActive == true)
+                if (CurrentUser.IsActive == true)
                 {
 
                     if (chkRememberLogin.Checked)
@@ -42,11 +42,14 @@ namespace MySolution
                         //Properties.Settings.Default.Password = clsGlobal.CurrentUser.Password;
                         //Properties.Settings.Default.Save();
                         
-                        File.WriteAllText("Rememberedlogin.txt", clsGlobal.CurrentUser.UserName
+                        File.WriteAllText("Rememberedlogin.txt", CurrentUser.UserName
                                 + Environment.NewLine + clsGlobal.CurrentUser.Password);
                        
 
                     }
+
+                    clsGlobal.CurrentUser = CurrentUser;
+
                     frmMain frmMain = new frmMain(this);
                     frmMain.Show();
                     this.Hide();
