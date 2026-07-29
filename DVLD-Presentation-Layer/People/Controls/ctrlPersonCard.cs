@@ -20,10 +20,6 @@ namespace MySolution
         public int PersonID
         {
             get { return _PersonID; }
-            set
-            {
-                _PersonID = value;
-            }
         }
 
         public clsPerson SelectedPersonInfo
