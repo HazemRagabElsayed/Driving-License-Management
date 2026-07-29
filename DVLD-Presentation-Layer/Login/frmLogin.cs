@@ -41,12 +41,10 @@ namespace MySolution
                         //Properties.Settings.Default.UserName = clsGlobal.CurrentUser.UserName;
                         //Properties.Settings.Default.Password = clsGlobal.CurrentUser.Password;
                         //Properties.Settings.Default.Save();
-
-                        if (!File.Exists("Rememberedlogin.txt"))
-                        {
-                            File.WriteAllText("Rememberedlogin.txt", clsGlobal.CurrentUser.UserName
+                        
+                        File.WriteAllText("Rememberedlogin.txt", clsGlobal.CurrentUser.UserName
                                 + Environment.NewLine + clsGlobal.CurrentUser.Password);
-                        }
+                       
 
                     }
                     frmMain frmMain = new frmMain(this);
