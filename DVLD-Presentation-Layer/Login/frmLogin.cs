@@ -29,11 +29,11 @@ namespace MySolution
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            clsGlobal.CurrentUser = clsUser.Find(txtUserName.Text, txtPassword.Text);
+            clsUser CurrentUser = clsUser.Find(txtUserName.Text, txtPassword.Text);
 
-            if(clsGlobal.CurrentUser != null)
+            if(CurrentUser != null)
             {
-                if (clsGlobal.CurrentUser.IsActive == true)
+                if (CurrentUser.IsActive == true)
                 {
 
                     if (chkRememberLogin.Checked)
@@ -42,13 +42,20 @@ namespace MySolution
                         //Properties.Settings.Default.Password = clsGlobal.CurrentUser.Password;
                         //Properties.Settings.Default.Save();
 
-                        if (!File.Exists("Rememberedlogin.txt"))
-                        {
-                            File.WriteAllText("Rememberedlogin.txt", clsGlobal.CurrentUser.UserName
-                                + Environment.NewLine + clsGlobal.CurrentUser.Password);
-                        }
+                        //File.WriteAllText("Rememberedlogin.txt", CurrentUser.UserName
+                        //        + Environment.NewLine + clsGlobal.CurrentUser.Password);
+
+                        clsGlobal.RememberUserNameAndPassword(CurrentUser.UserName, CurrentUser.Password);
 
                     }
+                    else
+                    {
+                        clsGlobal.RememberUserNameAndPassword("", "");
+
+                    }
+
+                    clsGlobal.CurrentUser = CurrentUser;
+
                     frmMain frmMain = new frmMain(this);
                     frmMain.Show();
                     this.Hide();
@@ -76,22 +83,28 @@ namespace MySolution
             string UserName = "";
             string Password = "";
 
-            if (File.Exists("Rememberedlogin.txt"))
-            {
-                string[] lines = File.ReadAllLines("Rememberedlogin.txt");
+            //if (File.Exists("Rememberedlogin.txt"))
+            //{
+            //    string[] lines = File.ReadAllLines("Rememberedlogin.txt");
 
-                UserName = lines[0];
-                Password = lines[1];
-            }
+            //    UserName = lines[0];
+            //    Password = lines[1];
+            //}
 
             //UserName = Properties.Settings.Default.UserName;
             //Password = Properties.Settings.Default.Password;
 
-            if (!string.IsNullOrEmpty(UserName) && !string.IsNullOrEmpty(Password))
+            if(clsGlobal.GetStoredCredentials(ref UserName, ref Password))
             {
                 txtUserName.Text = UserName;
                 txtPassword.Text = Password;
+                chkRememberLogin.Checked = true;
             }
+            else
+            {
+                chkRememberLogin.Checked = false;
+            }
+
         }
         private void btnClose_Click(object sender, EventArgs e)
         {
