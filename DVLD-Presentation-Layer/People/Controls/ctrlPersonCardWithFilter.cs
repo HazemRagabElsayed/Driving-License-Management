@@ -22,8 +22,6 @@ namespace MySolution.People.Controls
 
         int _PersonID = -1;
 
-        enum enPersonDoes { NotExist = -1};
-
         public bool EnableFilter
         {
             set { DisableOrEnableFilter(value); }
@@ -132,7 +130,6 @@ namespace MySolution.People.Controls
                     $"No Person With {cbFilter.Text} = {txtFilter.Text}"
                     , "Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
 
-                ctrlPersonCard1.PersonID = (int)enPersonDoes.NotExist;
             }
             else
             {
