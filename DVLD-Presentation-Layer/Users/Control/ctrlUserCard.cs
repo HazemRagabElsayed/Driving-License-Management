@@ -32,14 +32,7 @@ namespace MySolution.Users.Control
 
                 lblUserID.Text = _User.UserID.ToString();
                 lblUserName.Text = _User.UserName.ToString();
-                if (_User.IsActive)
-                {
-                    lblIsActive.Text = "Yes";
-                }
-                else
-                {
-                    lblIsActive.Text = "No";
-                }
+                lblIsActive.Text = _User.IsActive ? "Yes" : "No";
 
                 ctrlPersonCard1.LoadPersonInfo(_User.PersonID);
             }
