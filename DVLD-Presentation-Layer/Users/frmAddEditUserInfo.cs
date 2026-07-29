@@ -107,34 +107,34 @@ namespace MySolution.Users
         {
             if (txtUserName.Text.Trim() == "")
             {
+                e.Cancel = true;
                 epUserNameValidation.SetError(txtUserName,
                     "UserName cannot be blank");
             }
-            else if (_Mode == enMode.AddNew)
+             if (_Mode == enMode.AddNew)
             {
                 if (clsUser.IsExist(txtUserName.Text))
                 {
+                    e.Cancel = true;
                     epUserNameValidation.SetError(txtUserName,
                         "UserName is used by another user");
+                    return;
                 }
             }
-            else
-            {
-                epUserNameValidation.Clear();
-            }
+            epUserNameValidation.SetError(txtUserName,null);
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
             if (txtPassword.Text.Trim() == "")
             {
+                e.Cancel = true;
                 epPasswordValidation.SetError(txtPassword,
                     "Password cannot be blank");
+                return;
             }
-            else
-            {
-                epPasswordValidation.Clear();
-            }
+            
+            epPasswordValidation.SetError(txtPassword, null);
         }
 
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
@@ -146,7 +146,7 @@ namespace MySolution.Users
             }
             else
             {
-                epConfirmPasswordValidation.Clear();
+                epConfirmPasswordValidation.SetError(txtConfirmPassword, null);
             }
         }
 
@@ -163,27 +163,21 @@ namespace MySolution.Users
                             , buttons: default, icon: MessageBoxIcon.Error);
 
                         _EnableLoginInfo = false;
-
-                    }
-                    else
-                    {
-                        _EnableLoginInfo = true;
-                        tbAddEditUser.SelectedIndex = (int)enTabControlIndex.LoginInfo;
+                        return;
 
                     }
 
+                    _EnableLoginInfo = true;
+                    tbAddEditUser.SelectedIndex = (int)enTabControlIndex.LoginInfo;
+                    return;
                 }
-                else
-                {
-                    MessageBox.Show("Please select a person", "Select a Person",
+                MessageBox.Show("Please select a person", "Select a Person",
                          buttons: default, icon: MessageBoxIcon.Error);
-                    _EnableLoginInfo = false;
-                }
+                _EnableLoginInfo = false;
+                return;
             }
-            else
-            {
-                tbAddEditUser.SelectedIndex = (int)enTabControlIndex.LoginInfo;
-            }
+            
+            tbAddEditUser.SelectedIndex = (int)enTabControlIndex.LoginInfo;
 
         }
 
