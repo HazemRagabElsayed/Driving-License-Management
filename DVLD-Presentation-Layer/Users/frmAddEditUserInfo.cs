@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.Design;
 using System.Windows.Forms;
 
 namespace MySolution.Users
@@ -33,37 +34,22 @@ namespace MySolution.Users
 
         enum enTabControlIndex { PersonalInfo = 0, LoginInfo = 1 };
 
-        void _DisableFilter()
+        private bool _EnableFilter
         {
-            ctrlPersonCardWithFilter1.EnableFilter = false;
+            set { ctrlPersonCardWithFilter1.EnableFilter = value; }
         }
-        void _EnableFilter()
+        private bool _EnableLoginInfo
         {
-            ctrlPersonCardWithFilter1.EnableFilter = true;
+            set {
+                lblUserID.Enabled = value;
+                txtUserName.Enabled = value;
+                txtPassword.Enabled = value;
+                txtConfirmPassword.Enabled = value;
+                chkIsActive.Enabled = value;
+                btnSave.Enabled = value;
+            }
         }
-
-        void _DisableLoginInfo()
-        {
-            lblUserID.Enabled = false;
-            txtUserName.Enabled = false;
-            txtPassword.Enabled = false;
-            txtConfirmPassword.Enabled = false;
-            chkIsActive.Enabled = false;
-            btnSave.Enabled = false;
-
-        }
-
-        void _EnableLoginInfo()
-        {
-            lblUserID.Enabled = true;
-            txtUserName.Enabled = true;
-            txtPassword.Enabled = true;
-            txtConfirmPassword.Enabled = true;
-            chkIsActive.Enabled = true;
-            btnSave.Enabled = true;
-        }
-
-        void _FillUserWithData()
+        void _FillUserObjectWithData()
         {
             _User.PersonID = ctrlPersonCardWithFilter1.Person.PersonID;
             _User.UserName = txtUserName.Text;
@@ -84,8 +70,8 @@ namespace MySolution.Users
             if (_Mode == enMode.AddNew)
             {
                 lblActionTitle.Text = "Add New User";
-                _EnableFilter();
-                _DisableLoginInfo();
+                _EnableFilter = true;
+                _EnableLoginInfo = false;
                 _User = new clsUser();
                 
 
@@ -93,8 +79,8 @@ namespace MySolution.Users
             else
             {
                 lblActionTitle.Text = "Update User";
-                _EnableLoginInfo();
-                _DisableFilter();
+                _EnableLoginInfo = true;
+                _EnableFilter = false;
                 _User = clsUser.Find(_UserID);
 
                 if (_User != null)
@@ -173,12 +159,12 @@ namespace MySolution.Users
                             " choose another one.", "Selected another person"
                             , buttons: default, icon: MessageBoxIcon.Error);
 
-                        _DisableLoginInfo();
+                        _EnableLoginInfo = false;
 
                     }
                     else
                     {
-                        _EnableLoginInfo();
+                        _EnableLoginInfo = true;
                         tbAddEditUser.SelectedIndex = (int)enTabControlIndex.LoginInfo;
 
                     }
@@ -188,7 +174,7 @@ namespace MySolution.Users
                 {
                     MessageBox.Show("Please select a person", "Select a Person",
                          buttons: default, icon: MessageBoxIcon.Error);
-                    _DisableLoginInfo();
+                    _EnableLoginInfo = false;
                 }
             }
             else
@@ -211,7 +197,7 @@ namespace MySolution.Users
                 return;
             }
 
-            _FillUserWithData();
+            _FillUserObjectWithData();
 
             if (_User.Save())
             {
@@ -219,7 +205,7 @@ namespace MySolution.Users
                 {
                     lblActionTitle.Text = "Update User";
                     lblUserID.Text = _User.UserID.ToString();
-                    _DisableFilter();
+                    _EnableFilter = false;
                 }
 
                 MessageBox.Show("Data saved successfully", "Saved", buttons: default,
