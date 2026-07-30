@@ -58,7 +58,7 @@ namespace MySolution.Users
                 dgvUsersList.Columns[2].HeaderText = "Full Name";
                 dgvUsersList.Columns[2].Width = 300;
 
-                //dgvUsersList.Columns[3].HeaderText = "User Name";
+                dgvUsersList.Columns[3].HeaderText = "User Name";
                 dgvUsersList.Columns[3].Width = 100;
 
                 dgvUsersList.Columns[4].HeaderText = "Is Active";
