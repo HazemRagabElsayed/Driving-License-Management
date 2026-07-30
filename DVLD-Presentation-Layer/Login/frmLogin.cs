@@ -31,51 +31,46 @@ namespace MySolution
         {
             clsUser CurrentUser = clsUser.Find(txtUserName.Text, txtPassword.Text);
 
-            if(CurrentUser != null)
+            if (CurrentUser == null)
             {
-                if (CurrentUser.IsActive == true)
-                {
+                MessageBox.Show("Invalid UserName/Password", "Wrong Credintials"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-                    if (chkRememberLogin.Checked)
-                    {
-                        //Properties.Settings.Default.UserName = clsGlobal.CurrentUser.UserName;
-                        //Properties.Settings.Default.Password = clsGlobal.CurrentUser.Password;
-                        //Properties.Settings.Default.Save();
-
-                        //File.WriteAllText("Rememberedlogin.txt", CurrentUser.UserName
-                        //        + Environment.NewLine + clsGlobal.CurrentUser.Password);
-
-                        clsGlobal.RememberUserNameAndPassword(CurrentUser.UserName, CurrentUser.Password);
-
-                    }
-                    else
-                    {
-                        clsGlobal.RememberUserNameAndPassword("", "");
-
-                    }
-
-                    clsGlobal.CurrentUser = CurrentUser;
-
-                    frmMain frmMain = new frmMain(this);
-                    frmMain.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("your account is deactivated" +
+            if (!CurrentUser.IsActive)
+            {
+                MessageBox.Show("your account is deactivated" +
                         ", please contact your admin", "Account need Activation"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                
+                return;
+            }
+
+            if (chkRememberLogin.Checked)
+            {
+                //Properties.Settings.Default.UserName = clsGlobal.CurrentUser.UserName;
+                //Properties.Settings.Default.Password = clsGlobal.CurrentUser.Password;
+                //Properties.Settings.Default.Save();
+
+                //File.WriteAllText("Rememberedlogin.txt", CurrentUser.UserName
+                //        + Environment.NewLine + clsGlobal.CurrentUser.Password);
+
+                clsGlobal.RememberUserNameAndPassword(CurrentUser.UserName, CurrentUser.Password);
 
             }
             else
             {
-                MessageBox.Show("Invalid UserName/Password", "Wrong Credintials"
-                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+                clsGlobal.RememberUserNameAndPassword("", "");
 
+            }
+
+            clsGlobal.CurrentUser = CurrentUser;
+
+            frmMain frmMain = new frmMain(this);
+            frmMain.Show();
+            this.Hide();
+
+        }
 
 
         private void frmLogin_Load(object sender, EventArgs e)
