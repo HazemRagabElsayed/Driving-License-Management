@@ -40,6 +40,11 @@ namespace MySolution.Users
                 epValidation.SetError(txtNewPassword, "New Password cannot be blank");
                 return;
             }
+            if (txtNewPassword.Text == _User.Password)
+            {
+                epValidation.SetError(txtNewPassword, "New Password cannot be same as old password");
+                return;
+            }
             epValidation.SetError(txtNewPassword, null);
         }
         void ValidateConfirmPassword()
@@ -58,7 +63,8 @@ namespace MySolution.Users
             {
                 if (txtCurrentPassword.Text != _User.Password
                     || txtNewPassword.Text == ""
-                    || txtNewPassword.Text != txtConfirmPassword.Text)
+                    || txtNewPassword.Text != txtConfirmPassword.Text
+                    || txtNewPassword.Text != _User.Password)
                 {
 
                     MessageBox.Show("Some fields are not valid!" +
