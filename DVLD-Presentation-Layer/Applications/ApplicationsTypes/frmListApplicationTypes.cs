@@ -20,6 +20,13 @@ namespace MySolution.Applications
             InitializeComponent();
         }
 
+        enum enTableColumnIndex
+        {
+            ID = 0,
+            Title = 1,
+            Fees = 2,
+        };
+
         void _RefreshApplicationTypesList()
         {
             _dtAllApplicationTypes = clsApplicationType.GetAll();
@@ -37,14 +44,14 @@ namespace MySolution.Applications
 
             if (dgvApplicationTypesList.Rows.Count > 0)
             {
-                dgvApplicationTypesList.Columns[0].HeaderText = "ID";
-                dgvApplicationTypesList.Columns[0].Width = 50;
+                dgvApplicationTypesList.Columns[(short)enTableColumnIndex.ID].HeaderText = "ID";
+                dgvApplicationTypesList.Columns[(short)enTableColumnIndex.ID].Width = 50;
 
-                dgvApplicationTypesList.Columns[1].HeaderText = "Title";
-                dgvApplicationTypesList.Columns[1].Width = 280;
+                dgvApplicationTypesList.Columns[(short)enTableColumnIndex.Title].HeaderText = "Title";
+                dgvApplicationTypesList.Columns[(short)enTableColumnIndex.Title].Width = 280;
 
-                dgvApplicationTypesList.Columns[2].HeaderText = "Fees";
-                dgvApplicationTypesList.Columns[2].Width = 80;
+                dgvApplicationTypesList.Columns[(short)enTableColumnIndex.Fees].HeaderText = "Fees";
+                dgvApplicationTypesList.Columns[(short)enTableColumnIndex.Fees].Width = 80;
             }
         }
 
@@ -52,7 +59,8 @@ namespace MySolution.Applications
         {
             //MessageBox.Show("This Feature is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmEditApplicationType frmUpdateApplicationType = new frmEditApplicationType
-                ((clsApplicationType.enAppType)dgvApplicationTypesList.CurrentRow.Cells[0].Value);
+                ((clsApplicationType.enAppType)dgvApplicationTypesList.
+                CurrentRow.Cells[(short)enTableColumnIndex.ID].Value);
 
             /* To solve problem of form window 
              * go behind MainForm when UpdateForm Is Closed*/
