@@ -22,13 +22,13 @@ namespace MySolution.Applications
             _ApplicationTypeID = ApplicationTypeID;
         }
 
-        void _AssureFinalChanges()
+        void _FillApplicationTypeObject()
         {
             _ApplicationType.ApplicationTypeTitle = txtTitle.Text;
             _ApplicationType.ApplicationFees = Convert.ToSingle(txtFees.Text);
         }
 
-        void _LoadApplicationTypesData()
+        void _FillApplicationTypeForm()
         {
             lblID.Text = _ApplicationTypeID.ToString();
             txtTitle.Text = _ApplicationType.ApplicationTypeTitle;
@@ -43,7 +43,7 @@ namespace MySolution.Applications
                 return;
             }
 
-            _LoadApplicationTypesData();
+            _FillApplicationTypeForm();
         }
 
         private void txtFees_KeyPress(object sender, KeyPressEventArgs e)
@@ -63,8 +63,7 @@ namespace MySolution.Applications
   
             return; 
         
-            _AssureFinalChanges();
-
+            _FillApplicationTypeObject();
 
             if (_ApplicationType.Save())
             {
