@@ -22,13 +22,13 @@ namespace MySolution.Applications
             _ApplicationTypeID = ApplicationTypeID;
         }
 
-        void _AssureFinalChanges()
+        void _FillApplicationTypeObject()
         {
             _ApplicationType.ApplicationTypeTitle = txtTitle.Text;
             _ApplicationType.ApplicationFees = Convert.ToSingle(txtFees.Text);
         }
 
-        void _LoadApplicationTypesData()
+        void _FillApplicationTypeForm()
         {
             lblID.Text = _ApplicationTypeID.ToString();
             txtTitle.Text = _ApplicationType.ApplicationTypeTitle;
@@ -43,7 +43,7 @@ namespace MySolution.Applications
                 return;
             }
 
-            _LoadApplicationTypesData();
+            _FillApplicationTypeForm();
         }
 
         private void txtFees_KeyPress(object sender, KeyPressEventArgs e)
@@ -63,8 +63,7 @@ namespace MySolution.Applications
   
             return; 
         
-            _AssureFinalChanges();
-
+            _FillApplicationTypeObject();
 
             if (_ApplicationType.Save())
             {
@@ -73,7 +72,8 @@ namespace MySolution.Applications
             }
             else
             {
-                MessageBox.Show("Error Data saving failed");
+                MessageBox.Show("Error Data saving failed","Error" ,MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -95,11 +95,9 @@ namespace MySolution.Applications
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtTitle, "Title Cannot be empty");
+                return;
             }
-            else
-            {
-                errorProvider1.SetError(txtTitle, null);
-            }
+            errorProvider1.SetError(txtTitle, null);
         }
 
         private void txtFees_Validating(object sender, CancelEventArgs e)
@@ -108,21 +106,16 @@ namespace MySolution.Applications
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtFees, "Fees Cannot be empty");
-            }
-            else
-            {
-
-                errorProvider1.SetError(txtFees, null);
+                return;
             }
             if (!clsValidation.IsNumber(txtFees.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtFees, "Invalid Number");
+                return;
             }
-            else
-            {
-                errorProvider1.SetError(txtFees, null);
-            }
+
+            errorProvider1.SetError(txtFees, null);
         }
     }
 }
