@@ -97,12 +97,12 @@ namespace MySolution.Users
                     _dtUsers.DefaultView.RowFilter = "";
                     break;
                 case (int)enSelectedIsActiveIndex.Yes:
-                    _dtUsers.DefaultView.RowFilter = string.Format
-                                                    ("IsActive = 1");
+                    _dtUsers.DefaultView.RowFilter = 
+                                                    string.Format("IsActive = 1");
                     break;
                 case (int)enSelectedIsActiveIndex.No:
-                    _dtUsers.DefaultView.RowFilter = string.Format
-                                ("IsActive = 0");
+                    _dtUsers.DefaultView.RowFilter = 
+                                                    string.Format("IsActive = 0");
                     break;
             }
             lblRecordsNumber.Text = _dtUsers.Rows.Count.ToString();
@@ -110,7 +110,13 @@ namespace MySolution.Users
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-            if(txtFilter.Text.Trim() == "" || 
+
+            if (cbFilter.SelectedIndex == (int)enSelectedFilterIndex.IsActive)
+            {
+                return;
+            }
+
+            if (txtFilter.Text.Trim() == "" || 
                 cbFilter.SelectedIndex == (int)enSelectedFilterIndex.None)
             {
                 _dtUsers.DefaultView.RowFilter = "";
@@ -141,23 +147,21 @@ namespace MySolution.Users
                     return;
             }
 
-            if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.IsActive)
-            {
-                return;
-            }
-            else if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.UserID
+            string FilteringProcess = "";
+
+            if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.UserID
                 || cbFilter.SelectedIndex == (int)enSelectedFilterIndex.PersonID)
             {
-                _dtUsers.DefaultView.RowFilter =
-                    string.Format("{0} = {1}"
-                    , ColumnFilter, txtFilter.Text.Trim());
+                FilteringProcess = "{0} = {1}";
             }
             else
             {
-                _dtUsers.DefaultView.RowFilter =
-                    string.Format("{0} Like '{1}%'"
-                    , ColumnFilter, txtFilter.Text.Trim());
+                FilteringProcess = "{0} Like '{1}%'";
             }
+
+            _dtUsers.DefaultView.RowFilter =
+                    string.Format(FilteringProcess
+                    , ColumnFilter, txtFilter.Text.Trim());
 
             lblRecordsNumber.Text = _dtUsers.Rows.Count.ToString();
 
