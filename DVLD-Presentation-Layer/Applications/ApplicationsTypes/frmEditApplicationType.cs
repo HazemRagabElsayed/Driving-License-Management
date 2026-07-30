@@ -72,7 +72,7 @@ namespace MySolution.Applications
             }
             else
             {
-                MessageBox.Show("Error Data saving failed","Error" MessageBoxButtons.OK,
+                MessageBox.Show("Error Data saving failed","Error" ,MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
         }
@@ -95,11 +95,9 @@ namespace MySolution.Applications
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtTitle, "Title Cannot be empty");
+                return;
             }
-            else
-            {
-                errorProvider1.SetError(txtTitle, null);
-            }
+            errorProvider1.SetError(txtTitle, null);
         }
 
         private void txtFees_Validating(object sender, CancelEventArgs e)
@@ -108,21 +106,16 @@ namespace MySolution.Applications
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtFees, "Fees Cannot be empty");
-            }
-            else
-            {
-
-                errorProvider1.SetError(txtFees, null);
+                return;
             }
             if (!clsValidation.IsNumber(txtFees.Text))
             {
                 e.Cancel = true;
                 errorProvider1.SetError(txtFees, "Invalid Number");
+                return;
             }
-            else
-            {
-                errorProvider1.SetError(txtFees, null);
-            }
+
+            errorProvider1.SetError(txtFees, null);
         }
     }
 }
