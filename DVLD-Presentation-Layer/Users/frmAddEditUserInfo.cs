@@ -1,4 +1,4 @@
-﻿using DVLDBusinessLayer;
+using DVLDBusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -134,7 +134,6 @@ namespace MySolution.Users
                     "Password cannot be blank");
                 return;
             }
-
             epValidation.SetError(txtPassword, null);
         }
 
@@ -145,11 +144,9 @@ namespace MySolution.Users
                 e.Cancel = true;
                 epValidation.SetError(txtConfirmPassword,
                     "Password Confirmation doesn't match Password");
+                return;
             }
-            else
-            {
-                epValidation.SetError(txtConfirmPassword, null);
-            }
+            epValidation.SetError(txtConfirmPassword, null);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
