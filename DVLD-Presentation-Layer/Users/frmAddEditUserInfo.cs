@@ -108,20 +108,21 @@ namespace MySolution.Users
             if (txtUserName.Text.Trim() == "")
             {
                 e.Cancel = true;
-                epUserNameValidation.SetError(txtUserName,
+                epValidation.SetError(txtUserName,
                     "UserName cannot be blank");
+                return;
             }
              if (_Mode == enMode.AddNew)
             {
                 if (clsUser.IsExist(txtUserName.Text))
                 {
                     e.Cancel = true;
-                    epUserNameValidation.SetError(txtUserName,
+                    epValidation.SetError(txtUserName,
                         "UserName is used by another user");
                     return;
                 }
             }
-            epUserNameValidation.SetError(txtUserName,null);
+            epValidation.SetError(txtUserName,null);
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
@@ -129,24 +130,25 @@ namespace MySolution.Users
             if (txtPassword.Text.Trim() == "")
             {
                 e.Cancel = true;
-                epPasswordValidation.SetError(txtPassword,
+                epValidation.SetError(txtPassword,
                     "Password cannot be blank");
                 return;
             }
-            
-            epPasswordValidation.SetError(txtPassword, null);
+
+            epValidation.SetError(txtPassword, null);
         }
 
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
         {
             if(txtPassword.Text != txtConfirmPassword.Text)
             {
-                epConfirmPasswordValidation.SetError(txtConfirmPassword,
+                e.Cancel = true;
+                epValidation.SetError(txtConfirmPassword,
                     "Password Confirmation doesn't match Password");
             }
             else
             {
-                epConfirmPasswordValidation.SetError(txtConfirmPassword, null);
+                epValidation.SetError(txtConfirmPassword, null);
             }
         }
 

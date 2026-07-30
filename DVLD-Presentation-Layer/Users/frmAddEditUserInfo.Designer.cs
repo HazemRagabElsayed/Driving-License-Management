@@ -50,9 +50,7 @@
             this.lblActionTitle = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.epUserNameValidation = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epConfirmPasswordValidation = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epPasswordValidation = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epValidation = new System.Windows.Forms.ErrorProvider(this.components);
             this.tbAddEditUser.SuspendLayout();
             this.tpPersonalInfo.SuspendLayout();
             this.tpLoginInfo.SuspendLayout();
@@ -60,9 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epUserNameValidation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epConfirmPasswordValidation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epPasswordValidation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epValidation)).BeginInit();
             this.SuspendLayout();
             // 
             // tbAddEditUser
@@ -314,17 +310,9 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // epUserNameValidation
+            // epValidation
             // 
-            this.epUserNameValidation.ContainerControl = this;
-            // 
-            // epConfirmPasswordValidation
-            // 
-            this.epConfirmPasswordValidation.ContainerControl = this;
-            // 
-            // epPasswordValidation
-            // 
-            this.epPasswordValidation.ContainerControl = this;
+            this.epValidation.ContainerControl = this;
             // 
             // frmAddEditUserInfo
             // 
@@ -348,9 +336,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epUserNameValidation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epConfirmPasswordValidation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epPasswordValidation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epValidation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,8 +365,6 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.CheckBox chkIsActive;
-        private System.Windows.Forms.ErrorProvider epUserNameValidation;
-        private System.Windows.Forms.ErrorProvider epConfirmPasswordValidation;
-        private System.Windows.Forms.ErrorProvider epPasswordValidation;
+        private System.Windows.Forms.ErrorProvider epValidation;
     }
 }
