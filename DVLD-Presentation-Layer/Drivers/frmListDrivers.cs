@@ -28,6 +28,16 @@ namespace MySolution.Drivers
             NationalNo = 3, FullName = 4
         };
 
+        enum enTableColumnIndex
+        {
+            DriverID = 0,
+            PersonID = 1,
+            NationalNo = 2,
+            FullName = 3,
+            Date = 4,
+            ActiveLicenses = 5
+        };
+
         private void _LoadDriversData()
         {
 
@@ -37,23 +47,23 @@ namespace MySolution.Drivers
             if (dgvDriversList.Rows.Count > 0)
             {
 
-                dgvDriversList.Columns[1].HeaderText = "Driver ID";
-                dgvDriversList.Columns[0].Width = 100;
+                dgvDriversList.Columns[(short)enTableColumnIndex.DriverID].HeaderText = "Driver ID";
+                dgvDriversList.Columns[(short)enTableColumnIndex.DriverID].Width = 100;
 
-                dgvDriversList.Columns[1].HeaderText = "Person ID";
-                dgvDriversList.Columns[1].Width = 100;
+                dgvDriversList.Columns[(short)enTableColumnIndex.PersonID].HeaderText = "Person ID";
+                dgvDriversList.Columns[(short)enTableColumnIndex.PersonID].Width = 100;
 
-                dgvDriversList.Columns[2].HeaderText = "National No.";
-                dgvDriversList.Columns[2].Width = 100;
+                dgvDriversList.Columns[(short)enTableColumnIndex.NationalNo].HeaderText = "National No.";
+                dgvDriversList.Columns[(short)enTableColumnIndex.NationalNo].Width = 100;
 
-                dgvDriversList.Columns[3].HeaderText = "Full Name";
-                dgvDriversList.Columns[3].Width = 300;
+                dgvDriversList.Columns[(short)enTableColumnIndex.FullName].HeaderText = "Full Name";
+                dgvDriversList.Columns[(short)enTableColumnIndex.FullName].Width = 300;
 
-                dgvDriversList.Columns[4].HeaderText = "Date";
-                dgvDriversList.Columns[4].Width = 200;
+                dgvDriversList.Columns[(short)enTableColumnIndex.Date].HeaderText = "Date";
+                dgvDriversList.Columns[(short)enTableColumnIndex.Date].Width = 200;
 
-                dgvDriversList.Columns[5].HeaderText = "Active Licenses";
-                dgvDriversList.Columns[5].Width = 100;
+                dgvDriversList.Columns[(short)enTableColumnIndex.ActiveLicenses].HeaderText = "Active Licenses";
+                dgvDriversList.Columns[(short)enTableColumnIndex.ActiveLicenses].Width = 100;
 
             }
 
@@ -140,7 +150,8 @@ namespace MySolution.Drivers
         }
         private void ShowPersonInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmShowPersonInfo frmPersonInfo = new frmShowPersonInfo(Convert.ToInt16(dgvDriversList.CurrentRow.Cells[1].Value));
+            frmShowPersonInfo frmPersonInfo = new frmShowPersonInfo(Convert.ToInt16(
+                dgvDriversList.CurrentRow.Cells[(short)enTableColumnIndex.PersonID].Value));
             frmPersonInfo.ShowDialog();
             _RefreshDriversList();
         }
@@ -153,7 +164,7 @@ namespace MySolution.Drivers
         {
             //MessageBox.Show("This Feature is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             frmLicenseHistory frmLicenseHistory = new frmLicenseHistory
-                ((int)dgvDriversList.CurrentRow.Cells[1].Value);
+                ((int)dgvDriversList.CurrentRow.Cells[(short)enTableColumnIndex.PersonID].Value);
             frmLicenseHistory.ShowDialog();
             _RefreshDriversList();
 
