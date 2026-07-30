@@ -79,13 +79,12 @@ namespace MySolution.Users
                     MessageBox.Show("Password Saved Successfully",
                 "Saved"
                 , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
-                else
-                {
+
                     MessageBox.Show("Password is not saved , an error occured",
                 "Error"
                 , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
             }
 
         }
