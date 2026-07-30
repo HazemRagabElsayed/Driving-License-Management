@@ -1,4 +1,4 @@
-﻿using DVLDBusinessLayer;
+using DVLDBusinessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -108,7 +108,7 @@ namespace MySolution.Users
             if (txtUserName.Text.Trim() == "")
             {
                 e.Cancel = true;
-                epUserNameValidation.SetError(txtUserName,
+                epValidation.SetError(txtUserName,
                     "UserName cannot be blank");
                 return;
             }
@@ -117,12 +117,12 @@ namespace MySolution.Users
                 if (clsUser.IsExist(txtUserName.Text))
                 {
                     e.Cancel = true;
-                    epUserNameValidation.SetError(txtUserName,
+                    epValidation.SetError(txtUserName,
                         "UserName is used by another user");
                     return;
                 }
             }
-            epUserNameValidation.SetError(txtUserName,null);
+            epValidation.SetError(txtUserName,null);
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
@@ -130,11 +130,11 @@ namespace MySolution.Users
             if (txtPassword.Text.Trim() == "")
             {
                 e.Cancel = true;
-                epPasswordValidation.SetError(txtPassword,
+                epValidation.SetError(txtPassword,
                     "Password cannot be blank");
                 return;
             }
-            epPasswordValidation.SetError(txtPassword, null);
+            epValidation.SetError(txtPassword, null);
         }
 
         private void txtConfirmPassword_Validating(object sender, CancelEventArgs e)
@@ -142,11 +142,11 @@ namespace MySolution.Users
             if(txtPassword.Text != txtConfirmPassword.Text)
             {
                 e.Cancel = true;
-                epConfirmPasswordValidation.SetError(txtConfirmPassword,
+                epValidation.SetError(txtConfirmPassword,
                     "Password Confirmation doesn't match Password");
                 return;
             }
-            epConfirmPasswordValidation.SetError(txtConfirmPassword, null);
+            epValidation.SetError(txtConfirmPassword, null);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
