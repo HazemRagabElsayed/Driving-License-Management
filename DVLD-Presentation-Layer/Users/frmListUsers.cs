@@ -27,6 +27,15 @@ namespace MySolution.Users
             All = 0, Yes = 1, No = 2
         };
 
+        enum enTableColumnIndex
+        {
+            UserID = 0,
+            PersonID = 1,
+            FullName = 2,
+            UserName = 3,
+            IsActive = 4
+        };
+
         public frmListUsers()
         {
             InitializeComponent();
@@ -49,20 +58,20 @@ namespace MySolution.Users
 
             if (dgvUsersList.Rows.Count > 0)
             {
-                dgvUsersList.Columns[0].HeaderText = "User ID";
-                dgvUsersList.Columns[0].Width = 80;
+                dgvUsersList.Columns[(short)enTableColumnIndex.UserID].HeaderText = "User ID";
+                dgvUsersList.Columns[(short)enTableColumnIndex.UserID].Width = 80;
 
-                dgvUsersList.Columns[1].HeaderText = "Person ID";
-                dgvUsersList.Columns[1].Width = 80;
+                dgvUsersList.Columns[(short)enTableColumnIndex.PersonID].HeaderText = "Person ID";
+                dgvUsersList.Columns[(short)enTableColumnIndex.PersonID].Width = 80;
 
-                dgvUsersList.Columns[2].HeaderText = "Full Name";
-                dgvUsersList.Columns[2].Width = 300;
+                dgvUsersList.Columns[(short)enTableColumnIndex.FullName].HeaderText = "Full Name";
+                dgvUsersList.Columns[(short)enTableColumnIndex.FullName].Width = 300;
 
-                dgvUsersList.Columns[3].HeaderText = "User Name";
-                dgvUsersList.Columns[3].Width = 100;
+                dgvUsersList.Columns[(short)enTableColumnIndex.UserName].HeaderText = "User Name";
+                dgvUsersList.Columns[(short)enTableColumnIndex.UserName].Width = 100;
 
-                dgvUsersList.Columns[4].HeaderText = "Is Active";
-                dgvUsersList.Columns[4].Width = 100;
+                dgvUsersList.Columns[(short)enTableColumnIndex.IsActive].HeaderText = "Is Active";
+                dgvUsersList.Columns[(short)enTableColumnIndex.IsActive].Width = 100;
             }
         }
 
@@ -81,22 +90,12 @@ namespace MySolution.Users
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.None)
-            {
-                txtFilter.Visible = false;
-                cbIsActive.Visible = false;
 
-            }
-            else if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.IsActive)
-            {
-                txtFilter.Visible = false;
-                cbIsActive.Visible = true;
-            }
-            else
-            {
-                txtFilter.Visible = true;
-                cbIsActive.Visible = false;
-            }
+            cbIsActive.Visible = (cbFilter.SelectedIndex == (int)enSelectedFilterIndex.IsActive);
+            txtFilter.Visible = (
+                !cbIsActive.Visible &&
+                cbFilter.SelectedIndex != (int)enSelectedFilterIndex.None
+                );
         }
 
         private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
@@ -107,12 +106,12 @@ namespace MySolution.Users
                     _dtUsers.DefaultView.RowFilter = "";
                     break;
                 case (int)enSelectedIsActiveIndex.Yes:
-                    _dtUsers.DefaultView.RowFilter = string.Format
-                                                    ("IsActive = 1");
+                    _dtUsers.DefaultView.RowFilter = 
+                                                    string.Format("IsActive = 1");
                     break;
                 case (int)enSelectedIsActiveIndex.No:
-                    _dtUsers.DefaultView.RowFilter = string.Format
-                                ("IsActive = 0");
+                    _dtUsers.DefaultView.RowFilter = 
+                                                    string.Format("IsActive = 0");
                     break;
             }
             lblRecordsNumber.Text = _dtUsers.Rows.Count.ToString();
@@ -120,7 +119,13 @@ namespace MySolution.Users
 
         private void txtFilter_TextChanged(object sender, EventArgs e)
         {
-            if(txtFilter.Text.Trim() == "" || 
+
+            if (cbFilter.SelectedIndex == (int)enSelectedFilterIndex.IsActive)
+            {
+                return;
+            }
+
+            if (txtFilter.Text.Trim() == "" || 
                 cbFilter.SelectedIndex == (int)enSelectedFilterIndex.None)
             {
                 _dtUsers.DefaultView.RowFilter = "";
@@ -151,23 +156,21 @@ namespace MySolution.Users
                     return;
             }
 
-            if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.IsActive)
-            {
-                return;
-            }
-            else if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.UserID
+            string FilteringProcess = "";
+
+            if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.UserID
                 || cbFilter.SelectedIndex == (int)enSelectedFilterIndex.PersonID)
             {
-                _dtUsers.DefaultView.RowFilter =
-                    string.Format("{0} = {1}"
-                    , ColumnFilter, txtFilter.Text.Trim());
+                FilteringProcess = "{0} = {1}";
             }
             else
             {
-                _dtUsers.DefaultView.RowFilter =
-                    string.Format("{0} Like '{1}%'"
-                    , ColumnFilter, txtFilter.Text.Trim());
+                FilteringProcess = "{0} Like '{1}%'";
             }
+
+            _dtUsers.DefaultView.RowFilter =
+                    string.Format(FilteringProcess
+                    , ColumnFilter, txtFilter.Text.Trim());
 
             lblRecordsNumber.Text = _dtUsers.Rows.Count.ToString();
 
@@ -177,7 +180,7 @@ namespace MySolution.Users
         private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("This Feature is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            frmUserInfo frmUserInfo = new frmUserInfo((int)dgvUsersList.CurrentRow.Cells[0].Value);
+            frmUserInfo frmUserInfo = new frmUserInfo((int)dgvUsersList.CurrentRow.Cells[(short)enTableColumnIndex.UserID].Value);
             frmUserInfo.Show();
         }
 
@@ -192,7 +195,8 @@ namespace MySolution.Users
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("This Feature is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            frmAddEditUserInfo frmAddEditUserInfo = new frmAddEditUserInfo((int)dgvUsersList.CurrentRow.Cells[0].Value);
+            frmAddEditUserInfo frmAddEditUserInfo = new frmAddEditUserInfo(
+                (int)dgvUsersList.CurrentRow.Cells[(short)enTableColumnIndex.UserID].Value);
             frmAddEditUserInfo.Show();
             _RefreshUsersList();
         }
@@ -200,19 +204,20 @@ namespace MySolution.Users
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //MessageBox.Show("This Feature is Not Implemented Yet!", "Not Ready!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            frmChangePassword frmChangePassword = new frmChangePassword((int)dgvUsersList.CurrentRow.Cells[0].Value);
+            frmChangePassword frmChangePassword = new frmChangePassword(
+                (int)dgvUsersList.CurrentRow.Cells[(short)enTableColumnIndex.UserID].Value);
             frmChangePassword.Show();
         }
 
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int UserID = Convert.ToInt32(dgvUsersList.CurrentRow.Cells[0].Value);
+            int UserID = Convert.ToInt32(dgvUsersList.CurrentRow.Cells[(short)enTableColumnIndex.UserID].Value);
 
             if (MessageBox.Show($"Are you sure you want to delete User" +
                 $"  [{UserID}]"
                 , "Confirm Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
-                if (clsUser.Delete(Convert.ToInt32(UserID)))
+                if (clsUser.Delete(UserID))
                 {
                     //DeleteImage(clsUser.Find(UserID).ImagePath);
                     //_RefreshPeopleList();
