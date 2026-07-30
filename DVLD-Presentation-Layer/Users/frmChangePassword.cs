@@ -56,33 +56,32 @@ namespace MySolution.Users
 
             if (_User != null)
             {
-                if (txtCurrentPassword.Text == _User.Password
-                    && txtNewPassword.Text != ""
-                    && txtNewPassword.Text == txtConfirmPassword.Text)
+                if (txtCurrentPassword.Text != _User.Password
+                    || txtNewPassword.Text == ""
+                    || txtNewPassword.Text != txtConfirmPassword.Text)
                 {
-                    _User.Password = txtNewPassword.Text;
-                    if (_User.Save())
-                    {
-                        MessageBox.Show("Password Saved Successfully",
-                    "Saved"
-                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Password is not saved , an error occured",
-                    "Error"
-                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                        
-                }
-                else
-                {
-                    ValidateCurrentPassword();
+
                     MessageBox.Show("Some fields are not valid!" +
                     ", put the mouse over the red icon(s) to see the error", "Validation Error"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                _User.Password = txtNewPassword.Text;
+
+                if (_User.Save())
+                {
+                    MessageBox.Show("Password Saved Successfully",
+                "Saved"
+                , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Password is not saved , an error occured",
+                "Error"
+                , MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
         }
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
@@ -104,15 +103,16 @@ namespace MySolution.Users
         private void frmChangePassword_Load(object sender, EventArgs e)
         {
             _User = clsUser.Find(_UserID);
+
             if (_User != null)
             {
                 ctrlUserCard1._LoadUserInfo(_UserID);
+                return;
             }
-            else
-            {
-                //MessageBox
-                //Close();
-            }
+
+            MessageBox.Show($"User with ID {_UserID} is not found" , "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Close();
         }
     }
 }
