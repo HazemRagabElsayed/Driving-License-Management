@@ -81,22 +81,12 @@ namespace MySolution.Users
 
         private void cbFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.None)
-            {
-                txtFilter.Visible = false;
-                cbIsActive.Visible = false;
 
-            }
-            else if(cbFilter.SelectedIndex == (int)enSelectedFilterIndex.IsActive)
-            {
-                txtFilter.Visible = false;
-                cbIsActive.Visible = true;
-            }
-            else
-            {
-                txtFilter.Visible = true;
-                cbIsActive.Visible = false;
-            }
+            cbIsActive.Visible = (cbFilter.SelectedIndex == (int)enSelectedFilterIndex.IsActive);
+            txtFilter.Visible = (
+                !cbIsActive.Visible &&
+                cbFilter.SelectedIndex != (int)enSelectedFilterIndex.None
+                );
         }
 
         private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
