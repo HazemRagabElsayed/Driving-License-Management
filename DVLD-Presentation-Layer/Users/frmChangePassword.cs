@@ -28,34 +28,28 @@ namespace MySolution.Users
         {
             if (txtCurrentPassword.Text != _User.Password)
             {
-                epCurrentPasswordValidation.SetError(txtCurrentPassword, "Current password is wrong!");
+                epValidation.SetError(txtCurrentPassword, "Current password is wrong!");
+                return;
             }
-            else
-            {
-                epCurrentPasswordValidation.Clear();
-            }
+            epValidation.SetError(txtCurrentPassword,null);
         }
         void ValidateNewPassword()
         {
             if (txtNewPassword.Text == "")
             {
-                epNewPasswordValidation.SetError(txtNewPassword, "New Password cannot be blank");
+                epValidation.SetError(txtNewPassword, "New Password cannot be blank");
+                return;
             }
-            else
-            {
-                epNewPasswordValidation.Clear();
-            }
+            epValidation.SetError(txtNewPassword, null);
         }
         void ValidateConfirmPassword()
         {
             if (txtNewPassword.Text != txtConfirmPassword.Text)
             {
-                epConfirmPasswordValidation.SetError(txtConfirmPassword, "Password Confirmation doesn't match New Password!");
+                epValidation.SetError(txtConfirmPassword, "Password Confirmation doesn't match New Password!");
+                return;
             }
-            else
-            {
-                epConfirmPasswordValidation.Clear();
-            }
+            epValidation.SetError(txtConfirmPassword, null);
         }
         private void btnSave_Click(object sender, EventArgs e)
         {

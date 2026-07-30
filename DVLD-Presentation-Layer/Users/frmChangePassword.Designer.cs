@@ -41,15 +41,11 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.epCurrentPasswordValidation = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epNewPasswordValidation = new System.Windows.Forms.ErrorProvider(this.components);
-            this.epConfirmPasswordValidation = new System.Windows.Forms.ErrorProvider(this.components);
+            this.epValidation = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epCurrentPasswordValidation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epNewPasswordValidation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epConfirmPasswordValidation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epValidation)).BeginInit();
             this.SuspendLayout();
             // 
             // ctrlUserCard1
@@ -178,17 +174,9 @@
             this.pictureBox3.TabIndex = 55;
             this.pictureBox3.TabStop = false;
             // 
-            // epCurrentPasswordValidation
+            // epValidation
             // 
-            this.epCurrentPasswordValidation.ContainerControl = this;
-            // 
-            // epNewPasswordValidation
-            // 
-            this.epNewPasswordValidation.ContainerControl = this;
-            // 
-            // epConfirmPasswordValidation
-            // 
-            this.epConfirmPasswordValidation.ContainerControl = this;
+            this.epValidation.ContainerControl = this;
             // 
             // frmChangePassword
             // 
@@ -214,9 +202,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epCurrentPasswordValidation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epNewPasswordValidation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.epConfirmPasswordValidation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.epValidation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,8 +222,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ErrorProvider epCurrentPasswordValidation;
-        private System.Windows.Forms.ErrorProvider epNewPasswordValidation;
-        private System.Windows.Forms.ErrorProvider epConfirmPasswordValidation;
+        private System.Windows.Forms.ErrorProvider epValidation;
     }
 }
