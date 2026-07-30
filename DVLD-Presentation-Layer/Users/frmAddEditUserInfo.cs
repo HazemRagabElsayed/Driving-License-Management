@@ -110,6 +110,7 @@ namespace MySolution.Users
                 e.Cancel = true;
                 epUserNameValidation.SetError(txtUserName,
                     "UserName cannot be blank");
+                return;
             }
              if (_Mode == enMode.AddNew)
             {
@@ -133,7 +134,6 @@ namespace MySolution.Users
                     "Password cannot be blank");
                 return;
             }
-            
             epPasswordValidation.SetError(txtPassword, null);
         }
 
@@ -141,13 +141,12 @@ namespace MySolution.Users
         {
             if(txtPassword.Text != txtConfirmPassword.Text)
             {
+                e.Cancel = true;
                 epConfirmPasswordValidation.SetError(txtConfirmPassword,
                     "Password Confirmation doesn't match Password");
+                return;
             }
-            else
-            {
-                epConfirmPasswordValidation.SetError(txtConfirmPassword, null);
-            }
+            epConfirmPasswordValidation.SetError(txtConfirmPassword, null);
         }
 
         private void btnNext_Click(object sender, EventArgs e)
