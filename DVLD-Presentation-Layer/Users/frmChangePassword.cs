@@ -28,67 +28,65 @@ namespace MySolution.Users
         {
             if (txtCurrentPassword.Text != _User.Password)
             {
-                epCurrentPasswordValidation.SetError(txtCurrentPassword, "Current password is wrong!");
+                epValidation.SetError(txtCurrentPassword, "Current password is wrong!");
+                return;
             }
-            else
-            {
-                epCurrentPasswordValidation.Clear();
-            }
+            epValidation.SetError(txtCurrentPassword,null);
         }
         void ValidateNewPassword()
         {
             if (txtNewPassword.Text == "")
             {
-                epNewPasswordValidation.SetError(txtNewPassword, "New Password cannot be blank");
+                epValidation.SetError(txtNewPassword, "New Password cannot be blank");
+                return;
             }
-            else
+            if (txtNewPassword.Text == _User.Password)
             {
-                epNewPasswordValidation.Clear();
+                epValidation.SetError(txtNewPassword, "New Password cannot be same as old password");
+                return;
             }
+            epValidation.SetError(txtNewPassword, null);
         }
         void ValidateConfirmPassword()
         {
             if (txtNewPassword.Text != txtConfirmPassword.Text)
             {
-                epConfirmPasswordValidation.SetError(txtConfirmPassword, "Password Confirmation doesn't match New Password!");
+                epValidation.SetError(txtConfirmPassword, "Password Confirmation doesn't match New Password!");
+                return;
             }
-            else
-            {
-                epConfirmPasswordValidation.Clear();
-            }
+            epValidation.SetError(txtConfirmPassword, null);
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
 
             if (_User != null)
             {
-                if (txtCurrentPassword.Text == _User.Password
-                    && txtNewPassword.Text != ""
-                    && txtNewPassword.Text == txtConfirmPassword.Text)
+                if (txtCurrentPassword.Text != _User.Password
+                    || txtNewPassword.Text == ""
+                    || txtNewPassword.Text != txtConfirmPassword.Text
+                    || txtNewPassword.Text != _User.Password)
                 {
-                    _User.Password = txtNewPassword.Text;
-                    if (_User.Save())
-                    {
-                        MessageBox.Show("Password Saved Successfully",
-                    "Saved"
-                    , MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Password is not saved , an error occured",
-                    "Error"
-                    , MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                        
-                }
-                else
-                {
-                    ValidateCurrentPassword();
+
                     MessageBox.Show("Some fields are not valid!" +
                     ", put the mouse over the red icon(s) to see the error", "Validation Error"
                     , MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
                 }
+                _User.Password = txtNewPassword.Text;
+
+                if (_User.Save())
+                {
+                    MessageBox.Show("Password Saved Successfully",
+                "Saved"
+                , MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                    MessageBox.Show("Password is not saved , an error occured",
+                "Error"
+                , MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
         private void txtCurrentPassword_Validating(object sender, CancelEventArgs e)
         {
@@ -110,15 +108,16 @@ namespace MySolution.Users
         private void frmChangePassword_Load(object sender, EventArgs e)
         {
             _User = clsUser.Find(_UserID);
+
             if (_User != null)
             {
                 ctrlUserCard1._LoadUserInfo(_UserID);
+                return;
             }
-            else
-            {
-                //MessageBox
-                //Close();
-            }
+
+            MessageBox.Show($"User with ID {_UserID} is not found" , "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Close();
         }
     }
 }
