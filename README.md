@@ -257,7 +257,7 @@ This project demonstrates practical experience with:
 
 **Hazem Ragab Elsayed**
 
-Software Engineer passionate about Desktop Applications, Databases, and Software Architecture.
+Software Developer passionate about Desktop Applications, Databases, and Software Architecture.
 
 ---
 
