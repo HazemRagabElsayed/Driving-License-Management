@@ -3,3 +3,4 @@ Debug
 Release
 *.user
 DVLD-People-Images
+DVLD-DataAccess-Layer/DataAccessSettings.cs
