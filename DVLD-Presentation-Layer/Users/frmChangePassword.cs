@@ -64,7 +64,7 @@ namespace MySolution.Users
                 if (txtCurrentPassword.Text != _User.Password
                     || txtNewPassword.Text == ""
                     || txtNewPassword.Text != txtConfirmPassword.Text
-                    || txtNewPassword.Text != _User.Password)
+                    || txtNewPassword.Text == _User.Password)
                 {
 
                     MessageBox.Show("Some fields are not valid!" +
