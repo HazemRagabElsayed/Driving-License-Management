@@ -48,12 +48,6 @@ namespace MySolution
 
             if (chkRememberLogin.Checked)
             {
-                //Properties.Settings.Default.UserName = clsGlobal.CurrentUser.UserName;
-                //Properties.Settings.Default.Password = clsGlobal.CurrentUser.Password;
-                //Properties.Settings.Default.Save();
-
-                //File.WriteAllText("Rememberedlogin.txt", CurrentUser.UserName
-                //        + Environment.NewLine + clsGlobal.CurrentUser.Password);
 
                 clsGlobal.RememberUserNameAndPassword(CurrentUser.UserName, CurrentUser.Password);
 
@@ -78,16 +72,6 @@ namespace MySolution
             string UserName = "";
             string Password = "";
 
-            //if (File.Exists("Rememberedlogin.txt"))
-            //{
-            //    string[] lines = File.ReadAllLines("Rememberedlogin.txt");
-
-            //    UserName = lines[0];
-            //    Password = lines[1];
-            //}
-
-            //UserName = Properties.Settings.Default.UserName;
-            //Password = Properties.Settings.Default.Password;
 
             if(clsGlobal.GetStoredCredentials(ref UserName, ref Password))
             {
