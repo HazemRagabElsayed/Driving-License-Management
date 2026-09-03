@@ -58,14 +58,6 @@ namespace DVLDDataAccessLayer
                     LastName = reader["LastName"].ToString();
                     DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
 
-                    //if (Convert.ToBoolean(reader["Gender"]))
-                    //{
-                    //    Gender = "Female";
-                    //}
-                    //else
-                    //{
-                    //    Gender = "Male";
-                    //}
 
                     Gender = Convert.ToInt16(reader["Gender"]);
 
@@ -153,14 +145,6 @@ namespace DVLDDataAccessLayer
                     LastName = reader["LastName"].ToString();
                     DateOfBirth = Convert.ToDateTime(reader["DateOfBirth"]);
 
-                    //if (Convert.ToBoolean(reader["Gender"]))
-                    //{
-                    //    Gender = "Female";
-                    //}
-                    //else
-                    //{
-                    //    Gender = "Male";
-                    //}
 
                     Gender = Convert.ToInt16(reader["Gender"]);
 
@@ -432,74 +416,6 @@ namespace DVLDDataAccessLayer
 
             return dt;
         }
-
-        //public static DataTable GetAll(string Filter = "", string Value = "")
-        //{
-        //    string Query = $"SELECT PersonID as 'Person ID', NationalNo as 'National No.'" +
-        //        $", FirstName as 'First Name', SecondName as 'Second Name'," +
-        //        $"ThirdName as 'Third Name', LastName as 'Last Name'," +
-        //        $" CASE  WHEN Gender = 0 THEN 'Male' WHEN Gender = 1 THEN 'Female'" +
-        //        $" ELSE 'Unknown' END AS Gender, DateOfBirth as 'Date Of Birth', " +
-        //        $"CountryName as Nationality, Phone, Email FROM  People p INNER JOIN " +
-        //        $"Countries c ON c.CountryID = p.NationalityCountryID";
-
-        //    SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-        //    SqlCommand command = new SqlCommand();
-
-
-        //    if(Filter != "" && Value != "")
-        //    {
-        //        Filter = Filter.Replace(" ","");
-        //        Filter = Filter.Replace(".", "");
-
-        //        if (Filter == "Nationality")
-        //        {
-        //            Filter = "CountryName";
-        //        }
-
-        //        if (Filter == "PersonID")
-        //        {
-        //            Query += $" Where {Filter} = @{Filter}";
-        //            command.Parameters.AddWithValue("@" + Filter, Convert.ToInt32(Value));
-        //        }
-        //        else
-        //        {
-        //            Query += $" Where {Filter} LIKE @{Filter}";
-        //            command.Parameters.AddWithValue("@" + Filter, Value + "%");
-        //        }
-
-        //    }
-
-
-        //    command.CommandText = Query;
-        //    command.Connection = Connection;
-
-
-        //    DataTable dt = new DataTable();
-
-
-
-        //    try
-        //    {
-        //        Connection.Open();
-
-        //        SqlDataReader reader = command.ExecuteReader();
-
-        //        dt.Load(reader);
-        //    }
-        //    catch
-        //    {
-        //        return null;
-        //    }
-        //    finally
-        //    {
-        //        Connection.Close();
-        //    }
-
-        //    return dt;
-        //}
-
         public static bool IsExist(int PersonID)
         {
             string Query = $"Select Exist=1 From People where PersonID = @PersonID";
@@ -648,49 +564,5 @@ namespace DVLDDataAccessLayer
             }
 
         }
-
-        //public static bool IsLinkedToOtherData(int PersonID)
-        //{
-        //    string Query = $"SELECT top 1 LinkExists = 1 FROM People  " +
-        //        $"INNER JOIN Applications ON Applications.ApplicantPersonID = People.PersonID INNER JOIN " +
-        //        $"Drivers ON People.PersonID = Drivers.PersonID " +
-        //        $"INNER JOIN  Users ON People.PersonID = Users.PersonID " +
-        //        $"Where People.PersonID = @PersonID";
-
-
-
-        //    SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-        //    SqlCommand command = new SqlCommand(Query, Connection);
-
-        //    command.Parameters.AddWithValue("@PersonID", PersonID);
-
-        //    Connection.Open();
-
-        //    SqlDataReader reader = command.ExecuteReader();
-
-        //    try
-        //    {
-        //        if (reader.Read())
-        //        {
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //            reader.Close();
-        //            Connection.Close();
-        //            return false;
-        //        }
-        //    }
-        //    catch
-        //    {
-        //        return false;
-        //    }
-        //    finally
-        //    {
-        //        reader.Close();
-        //        Connection.Close();
-        //    }
-        //}
     }
 }
