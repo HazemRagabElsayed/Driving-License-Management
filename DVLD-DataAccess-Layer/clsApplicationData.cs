@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -24,45 +25,43 @@ namespace DVLDDataAccessLayer
 
 
 
-            SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-            SqlCommand command = new SqlCommand(Query, Connection);
-
-            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-
-            Connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            try
+            using (SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString))
             {
-                if (reader.Read())
+                using (SqlCommand command = new SqlCommand(Query, Connection))
                 {
-                    ApplicantPersonID = Convert.ToInt32(reader["ApplicantPersonID"]);
-                    ApplicationDate = Convert.ToDateTime(reader["ApplicationDate"]);
-                    ApplicationTypeID = Convert.ToInt32(reader["ApplicationTypeID"]);
-                    ApplicationStatus = (byte)reader["ApplicationStatus"];
-                    LastStatusDate = Convert.ToDateTime(reader["LastStatusDate"]);
-                    PaidFees = Convert.ToSingle(reader["PaidFees"]);
-                    CreatedByUserID = Convert.ToInt32(reader["CreatedByUserID"]);
+                    command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
-                    return true;
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        try
+                        {
+                            Connection.Open();
+
+                            if (reader.Read())
+                            {
+                                ApplicantPersonID = Convert.ToInt32(reader["ApplicantPersonID"]);
+                                ApplicationDate = Convert.ToDateTime(reader["ApplicationDate"]);
+                                ApplicationTypeID = Convert.ToInt32(reader["ApplicationTypeID"]);
+                                ApplicationStatus = (byte)reader["ApplicationStatus"];
+                                LastStatusDate = Convert.ToDateTime(reader["LastStatusDate"]);
+                                PaidFees = Convert.ToSingle(reader["PaidFees"]);
+                                CreatedByUserID = Convert.ToInt32(reader["CreatedByUserID"]);
+
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                        catch
+                        {
+                            return false;
+                        }
+                    }
+                        
                 }
-                else
-                {
-                    reader.Close();
-                    Connection.Close();
-                    return false;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                reader.Close();
-                Connection.Close();
             }
 
         }
@@ -96,38 +95,37 @@ namespace DVLDDataAccessLayer
                 $"           ,@CreatedByUserID);" +
                 $"SELECT SCOPE_IDENTITY();";
 
-            SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-            SqlCommand command = new SqlCommand(NonQuery, Connection);
-
-            command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
-            command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-
-            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
-
-            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
-            command.Parameters.AddWithValue("@PaidFees", PaidFees);
-            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
-
-            try
+            using (SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString))
             {
-                Connection.Open();
-
-                object Result = command.ExecuteScalar();
-
-                if (int.TryParse(Result?.ToString(), out int ID))
+                using (SqlCommand command = new SqlCommand(NonQuery, Connection))
                 {
-                    ApplicationID = ID;
+                    command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+                    command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
+                    command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
 
+                    command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+
+                    command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
+                    command.Parameters.AddWithValue("@PaidFees", PaidFees);
+                    command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+
+                    try
+                    {
+                        Connection.Open();
+
+                        object Result = command.ExecuteScalar();
+
+                        if (int.TryParse(Result?.ToString(), out int ID))
+                        {
+                            ApplicationID = ID;
+
+                        }
+                    }
+                    catch
+                    {
+
+                    }
                 }
-            }
-            catch
-            {
-            }
-            finally
-            {
-                Connection.Close();
             }
 
             return ApplicationID;
@@ -148,36 +146,39 @@ namespace DVLDDataAccessLayer
                 $"      ,CreatedByUserID = @CreatedByUserID" +
                 $" WHERE ApplicationID = @ApplicationID;";
 
-            SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-            SqlCommand command = new SqlCommand(NonQuery, Connection);
-
-            command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
-            command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
-            command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
-            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
-            command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
-            command.Parameters.AddWithValue("@PaidFees", PaidFees);
-            command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
-            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-
-
-
-
-            try
+            using (SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString))
             {
-                Connection.Open();
+                using(SqlCommand command = new SqlCommand(NonQuery, Connection))
+                {
+                    command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+                    command.Parameters.AddWithValue("@ApplicationDate", ApplicationDate);
+                    command.Parameters.AddWithValue("@ApplicationTypeID", ApplicationTypeID);
+                    command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+                    command.Parameters.AddWithValue("@LastStatusDate", LastStatusDate);
+                    command.Parameters.AddWithValue("@PaidFees", PaidFees);
+                    command.Parameters.AddWithValue("@CreatedByUserID", CreatedByUserID);
+                    command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
-                RowsAffected = command.ExecuteNonQuery();
-            }
-            catch
-            {
+                    try
+                    {
+                        Connection.Open();
+                        RowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
 
+                    }
+                }
             }
-            finally
-            {
-                Connection.Close();
-            }
+
+                
+
+            
+
+
+
+
+            
 
             return (RowsAffected > 0);
 
@@ -186,34 +187,33 @@ namespace DVLDDataAccessLayer
         public static DataTable GetAll()
         {
             string Query = $"Select * from Applications";
-
-            SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-            SqlCommand command = new SqlCommand();
-
-            command.CommandText = Query;
-            command.Connection = Connection;
-
             DataTable dt = new DataTable();
 
-            try
+            using (SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString))
             {
-                Connection.Open();
+                
 
-                SqlDataReader reader = command.ExecuteReader();
-
-                if (reader.HasRows)
+                using (SqlCommand command = new SqlCommand())
                 {
-                    dt.Load(reader);
+                    command.CommandText = Query;
+                    command.Connection = Connection;
+
+                    try
+                    {
+                        Connection.Open();
+
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        if (reader.HasRows)
+                        {
+                            dt.Load(reader);
+                        }
+                    }
+                    catch
+                    {
+                        return null;
+                    }
                 }
-            }
-            catch
-            {
-                return null;
-            }
-            finally
-            {
-                Connection.Close();
             }
 
             return dt;
@@ -223,32 +223,30 @@ namespace DVLDDataAccessLayer
         {
             string Query = $"Select Exist=1 From Applications where ApplicationID = @ApplicationID";
 
-            SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-            SqlCommand command = new SqlCommand(Query, Connection);
-
-            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-
-            Connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            try
+            using (SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString))
             {
-                if (reader.HasRows)
-                    return true;
-                else
-                    return false;
+                using (SqlCommand command = new SqlCommand(Query, Connection))
+                {
+                    command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                reader.Close();
-                Connection.Close();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        try
+                        {
+                            Connection.Open();
+
+                            if (reader.HasRows)
+                                return true;
+                            else
+                                return false;
+
+                        }
+                        catch
+                        {
+                            return false;
+                        }
+                    }
+                }
             }
         }
 
@@ -256,35 +254,33 @@ namespace DVLDDataAccessLayer
         {
             string Query = $"Select Exist=1 From Applications where ApplicantPersonID = @ApplicantPersonID";
 
-            SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-            SqlCommand command = new SqlCommand(Query, Connection);
-
-            command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
-
-            Connection.Open();
-
-            SqlDataReader reader = command.ExecuteReader();
-
-            try
+            using (SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString))
             {
-                if (reader.Read())
+                using (SqlCommand command = new SqlCommand(Query, Connection))
                 {
-                    return true;
+                    command.Parameters.AddWithValue("@ApplicantPersonID", ApplicantPersonID);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        Connection.Open();
+
+                        try
+                        {
+                            if (reader.Read())
+                            {
+                                return true;
+                            }
+                            else
+                            {
+                                return false;
+                            }
+                        }
+                        catch
+                        {
+                            return false;
+                        }
+                    }
                 }
-                else
-                {
-                    return false;
-                }
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                reader.Close();
-                Connection.Close();
             }
         }
 
@@ -294,28 +290,24 @@ namespace DVLDDataAccessLayer
 
             string NonQuery = $"Delete From Applications where ApplicationID = @ApplicationID";
 
-            SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-            SqlCommand command = new SqlCommand(NonQuery, Connection);
-
-            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-
-
-            try
+            using (SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString))
             {
-                Connection.Open();
+                using (SqlCommand command = new SqlCommand(NonQuery, Connection))
+                {
+                    command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
+                    Connection.Open();
 
-                RowsAffected = command.ExecuteNonQuery();
-            }
-            catch
-            {
+                        try
+                        {
+                            RowsAffected = command.ExecuteNonQuery();
+                        }
+                        catch
+                        {
 
+                        }
+                    
+                }
             }
-            finally
-            {
-                Connection.Close();
-            }
-
             return (RowsAffected > 0);
         }
 
@@ -328,28 +320,26 @@ namespace DVLDDataAccessLayer
                 $", LastStatusDate = @LastStatusDate " +
                 $"WHERE ApplicationID = @ApplicationID;";
 
-            SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString);
-
-            SqlCommand command = new SqlCommand(NonQuery, Connection);
-
- 
-            command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
-            command.Parameters.AddWithValue("@LastStatusDate", DateTime.Now);
-            command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-
-            try
+            using (SqlConnection Connection = new SqlConnection(DataAccessSettings.ConnectionString))
             {
-                Connection.Open();
+                using (SqlCommand command = new SqlCommand(NonQuery, Connection))
+                {
+                    command.Parameters.AddWithValue("@ApplicationStatus", ApplicationStatus);
+                    command.Parameters.AddWithValue("@LastStatusDate", DateTime.Now);
+                    command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
 
-                RowsAffected = command.ExecuteNonQuery();
-            }
-            catch
-            {
+                    try
+                    {
+                        Connection.Open();
 
-            }
-            finally
-            {
-                Connection.Close();
+                        RowsAffected = command.ExecuteNonQuery();
+                    }
+                    catch
+                    {
+
+                    }
+
+                }
             }
 
             return (RowsAffected > 0);
