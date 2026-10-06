@@ -1,4 +1,5 @@
 ﻿using DVLDBusinessLayer;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,28 +17,23 @@ namespace MySolution.Global
 
         static public bool RememberUserNameAndPassword(string UserName, string Password)
         {
+            string KeyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD";
+            string UserValueName = "UserName";
+            string PasswordValueName = "Password";
+
             try
             {
+                Registry.SetValue(KeyPath, UserValueName, UserName, RegistryValueKind.String);
+                Registry.SetValue(KeyPath, PasswordValueName, Password, RegistryValueKind.String);
 
-                string CurrentDirectory = Directory.GetCurrentDirectory();
+                Console.WriteLine($"UserName Data : {UserName}" +
+                    $" is stored successfully in Value Name : {UserValueName}" +
+                    $" in path : {KeyPath}");
+                Console.WriteLine($"Password Data : {Password}" +
+                    $" is stored successfully in Value Name : {PasswordValueName}" +
+                    $" in path : {KeyPath}");
 
-                string FilePath = CurrentDirectory + @"\data.txt";
-
-                if (File.Exists(FilePath) 
-                    && (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password)))
-                {
-                        File.Delete(FilePath);
-                        return true;
-                }
-                string DataToSave = UserName + "#//#" + Password;
-                
-                using (StreamWriter Writer = new StreamWriter(FilePath, false))
-                {
-                        Writer.Write(DataToSave);
-
-                        return true;
-                }
-
+                return true;
             }
             catch (Exception ex)
             {
