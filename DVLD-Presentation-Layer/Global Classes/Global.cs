@@ -46,32 +46,26 @@ namespace MySolution.Global
 
         static public bool GetStoredCredentials(ref string UserName, ref string Password)
         {
+            string KeyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD";
+            string UserValueName = "UserName";
+            string PasswordValueName = "Password";
+
             try
             {
-                string CurrentDirectory = Directory.GetCurrentDirectory();
+                UserName = (string)Registry.GetValue(KeyPath, UserValueName, null);
+                Password = (string)Registry.GetValue(KeyPath, PasswordValueName, null);
 
-                string FilePath = CurrentDirectory + @"\data.txt";
-
-                if (!File.Exists(FilePath))
+                if (UserName != null && Password != null)
+                {
+                    return true;
+                }
+                else
                 {
                     return false;
                 }
 
-                
-                using (StreamReader Read = new StreamReader(FilePath))
-                {
-                    string Line;
-                    while ((Line = Read.ReadLine()) != null)
-                    {
-                        string[] Result = Line.Split(new string[] { "#//#" }, StringSplitOptions.None);
-                        UserName = Result[0];
-                        Password = Result[1];
-                    }
-                    return true;
-                }
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error : " + ex.Message);
                 return false;
