@@ -44,6 +44,48 @@ namespace MySolution.Global
             
         }
 
+        static public bool DeleteValueNameFromRegistry(string ValueName)
+        {
+            string KeyPath = @"SOFTWARE\DVLD";
+
+            try
+            {
+                using (RegistryKey BaseKey
+                       = RegistryKey.
+                       OpenBaseKey(RegistryHive.LocalMachine, RegistryView.Registry64))
+                {
+
+                    using (RegistryKey SubKey = BaseKey.OpenSubKey(KeyPath, true))
+                    {
+                        if (SubKey != null)
+                        {
+                            SubKey.DeleteValue(ValueName);
+                            Console.WriteLine($"Successfully deleted value '{ValueName}' from registry key '{KeyPath}'");
+                            return true;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"Registry key '{KeyPath}' not found");
+                            return false;
+                        }
+
+                    }
+
+                }
+            }
+            catch (UnauthorizedAccessException)
+            {
+                Console.WriteLine("UnauthorizedAccessException: Run the program with administrative privileges.");
+                return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"An error occurred: {ex.Message}");  
+                return false;
+            }
+       
+        }
+
         static public bool GetStoredCredentials(ref string UserName, ref string Password)
         {
             string KeyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD";

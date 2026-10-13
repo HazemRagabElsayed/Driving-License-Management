@@ -54,8 +54,8 @@ namespace MySolution
             }
             else
             {
-                clsGlobal.RememberUserNameAndPassword("", "");
-
+                clsGlobal.DeleteValueNameFromRegistry("UserName");
+                clsGlobal.DeleteValueNameFromRegistry("Password");
             }
 
             clsGlobal.CurrentUser = CurrentUser;
