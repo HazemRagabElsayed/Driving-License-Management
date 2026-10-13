@@ -1,4 +1,5 @@
 ﻿using DVLDBusinessLayer;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -16,28 +17,23 @@ namespace MySolution.Global
 
         static public bool RememberUserNameAndPassword(string UserName, string Password)
         {
+            string KeyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD";
+            string UserValueName = "UserName";
+            string PasswordValueName = "Password";
+
             try
             {
+                Registry.SetValue(KeyPath, UserValueName, UserName, RegistryValueKind.String);
+                Registry.SetValue(KeyPath, PasswordValueName, Password, RegistryValueKind.String);
 
-                string CurrentDirectory = Directory.GetCurrentDirectory();
+                Console.WriteLine($"UserName Data : {UserName}" +
+                    $" is stored successfully in Value Name : {UserValueName}" +
+                    $" in path : {KeyPath}");
+                Console.WriteLine($"Password Data : {Password}" +
+                    $" is stored successfully in Value Name : {PasswordValueName}" +
+                    $" in path : {KeyPath}");
 
-                string FilePath = CurrentDirectory + @"\data.txt";
-
-                if (File.Exists(FilePath) 
-                    && (string.IsNullOrEmpty(UserName) || string.IsNullOrEmpty(Password)))
-                {
-                        File.Delete(FilePath);
-                        return true;
-                }
-                string DataToSave = UserName + "#//#" + Password;
-                
-                using (StreamWriter Writer = new StreamWriter(FilePath, false))
-                {
-                        Writer.Write(DataToSave);
-
-                        return true;
-                }
-
+                return true;
             }
             catch (Exception ex)
             {
@@ -50,32 +46,26 @@ namespace MySolution.Global
 
         static public bool GetStoredCredentials(ref string UserName, ref string Password)
         {
+            string KeyPath = @"HKEY_LOCAL_MACHINE\SOFTWARE\DVLD";
+            string UserValueName = "UserName";
+            string PasswordValueName = "Password";
+
             try
             {
-                string CurrentDirectory = Directory.GetCurrentDirectory();
+                UserName = (string)Registry.GetValue(KeyPath, UserValueName, null);
+                Password = (string)Registry.GetValue(KeyPath, PasswordValueName, null);
 
-                string FilePath = CurrentDirectory + @"\data.txt";
-
-                if (!File.Exists(FilePath))
+                if (UserName != null && Password != null)
+                {
+                    return true;
+                }
+                else
                 {
                     return false;
                 }
 
-                
-                using (StreamReader Read = new StreamReader(FilePath))
-                {
-                    string Line;
-                    while ((Line = Read.ReadLine()) != null)
-                    {
-                        string[] Result = Line.Split(new string[] { "#//#" }, StringSplitOptions.None);
-                        UserName = Result[0];
-                        Password = Result[1];
-                    }
-                    return true;
-                }
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Error : " + ex.Message);
                 return false;
